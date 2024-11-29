@@ -24,14 +24,49 @@
     </header>
     
     <body>
+        <script>
+            let slideIndex = 1;
+            document.addEventListener("DOMContentLoaded", function() {
+                showSlides(slideIndex);
+            });
+
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+                let i;
+                let slides = document.getElementsByClassName("mySlides");
+                let dots = document.getElementsByClassName("dot");
+                if (n > slides.length) {slideIndex = 1}    
+                if (n < 1) {slideIndex = slides.length}
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";  
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex-1].style.display = "block";  
+                dots[slideIndex-1].className += " active";
+
+                // Toggle visibility of .fun element
+                let funFact = document.getElementById("funFact");
+                if (slideIndex === 1) {
+                    funFact.style.display = "block";
+                } else {
+                    funFact.style.display = "none";
+                }
+            }
+        </script>
+
         <div class="divider"></div>
 
         <div class="title">
-            <h1>Before and After: The Condition of Pasig River</h1><br>
-            <h2>- What species were there before (or likely to have flourished there)?<br>
-                - Why should we highlight that? <br>
-                - Why should we make people care about this historical perspective?<br>
-            </h2>
+            <h1>Before and After: The Condition of Pasig River</h1>
         </div>
 
         <div class="divider"></div>
@@ -69,38 +104,73 @@
         1990, it was home to many species of plants and animals, including:</p>
         </div>
 
-        <div class="slide_container">
-            <div class="slides">
-                <a href="https://esmart.nhrc.upd.edu.ph/?p=786#:~:text=The%20word%20“Manila”%20originated%20from,for%20some%20fish%20and%20crustaceans.">
-                    <b>Mangroves:</b><br> The <i>Scyphiphora hydrophylacea</i> mangrove species was once abundant along 
-                    the river. Other mangrove species found in the area include the Saging-Saging, 
-                    Api-Api, Bungalon, Nipa Palm, Bakauan Babae, and Pagatpat.
-                </a>
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+              <div class="numbertext">1 / 5</div>
+              <img src="assets/mangrove.jpg" style="width:100%">
+              <div class="text"><i><a href="https://esmart.nhrc.upd.edu.ph/?p=786#:~:text=The%20word%20“Manila”%20originated%20from,for%20some%20fish%20and%20crustaceans." style="color: inherit;">Scyphiphora hydrophylacea mangrove</a></i><br>
+                The <i>Scyphiphora hydrophylacea mangrove</i> species was 
+                once abundant along the river. Other mangrove species 
+                found in the area include the <i>Saging-Saging</i>, <i>Api-Api</i>, 
+                <i>Bungalon</i>, <i>Nipa Palm</i>, <i>Bakauan Babae</i>, and <i>Pagatpat</i>.</div>
             </div>
-            <div class="slides">
-                <a href="https://esmart.nhrc.upd.edu.ph/?p=786#:~:text=The%20word%20“Manila”%20originated%20from,for%20some%20fish%20and%20crustaceans.">
-                    <b>Rotifers:</b><br> A 2009 study recorded the presence of many rotifer species in the river.
-                </a>
+            
+            <div class="mySlides fade">
+              <div class="numbertext">2 / 5</div>
+              <img src="assets/rotifer.png" style="width:100%">
+              <div class="text"><a href="https://www.researchgate.net/publication/200600415_Composition_Abundance_and_Distribution_of_Rotifers_in_the_Pasig_River_Philippines" style="color: inherit;">Rotifer</a><br>
+                A 2009 study recorded the presence of many rotifer species in the river.</div>
             </div>
-            <div class="slides">
-                <a href="https://esmart.nhrc.upd.edu.ph/?p=786#:~:text=The%20word%20“Manila”%20originated%20from,for%20some%20fish%20and%20crustaceans.">
-                    <b>Copepods:</b> <br>The ciliate <i>Vorticella</i> and the euglenoid Colacium were found on copepods in the river.
-                </a>
+            
+            <div class="mySlides fade">
+              <div class="numbertext">3 / 5</div>
+              <img src="assets/copepod.png" style="width:100%">
+              <div class="text"><a href="https://asbp.org.ph/wp-content/uploads/2020/08/PJSB-IJD2-2020-008.pdf" style="color: inherit;">Copepod</a><br>
+                The ciliate <i>Vorticella</i> and the euglenoid Colacium were found on 
+                copepods in the river.</div>
             </div>
-            <div class="slides">
-                <a href="https://esmart.nhrc.upd.edu.ph/?p=786#:~:text=The%20word%20“Manila”%20originated%20from,for%20some%20fish%20and%20crustaceans.">
-                    <b>Kanduli: (Manila Sea Catfish)</b><br> The kanduli (<i>Arius manillensis</i>) is a native fish species 
-                    endemic to Luzon. It thrived in the freshwater and brackish habitats of the Pasig River 
-                    and Laguna de Bay. Kanduli played an essential role in local fishing practices​. 
-                </a>
+
+            <div class="mySlides fade">
+                <div class="numbertext">4 / 5</div>
+                <img src="assets/kanduli.png" style="width:100%">
+                <div class="text"><a href="https://animalia.bio/index.php/arius-manillensis" style="color: inherit;">Kanduli (Manila Sea Catfish)</a><br>
+                    The kanduli <i>(Arius manillensis)</i> is a native fish species 
+                    endemic to Luzon. It thrived in the freshwater and brackish habitats 
+                    of the Pasig River and Laguna de Bay. Kanduli played an essential 
+                    role in local fishing practices​. </div>
             </div>
-            <div class="slides">
-                <a href="https://esmart.nhrc.upd.edu.ph/?p=786#:~:text=The%20word%20“Manila”%20originated%20from,for%20some%20fish%20and%20crustaceans.">
-                    <b>Biya (Goby):</b><br> Native goby species inhabited the Pasig River's clean waters, 
-                    providing a sustainable food source for communities along its banks. These fish 
-                    are now rare due to habitat degradation​. 
-                </a>
+
+            <div class="mySlides fade">
+                <div class="numbertext">5 / 5</div>
+                <img src="assets/biya.jpg" style="width:100%">
+                <div class="text"><a href="https://storymaps.arcgis.com/stories/f0119df351f448a18922b4a51fdde539" style="color: inherit;">Biya (Goby)</a><br>
+                    Native goby species inhabited the Pasig River's clean waters, 
+                    providing a sustainable food source for communities along its 
+                    banks. These fish are now rare due to habitat degradation​. </div>
             </div>
+            
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+            
+            </div>
+            <br>
+            
+            <div style="text-align:center">
+              <span class="dot" onclick="currentSlide(1)"></span> 
+              <span class="dot" onclick="currentSlide(2)"></span> 
+              <span class="dot" onclick="currentSlide(3)"></span> 
+              <span class="dot" onclick="currentSlide(4)"></span> 
+              <span class="dot" onclick="currentSlide(5)"></span>
+            </div>
+        </div>  
+
+        <div class="fun" id="funFact">
+            Fun Fact: The name Manila is derived from the 
+            term "Maynila", which comes from the Tagalog words 
+            "may" (meaning "there is") and "nilad", which refers 
+            to a type of flowering mangrove plant (Scyphiphora 
+            hydrophyllacea) that once thrived along the shores 
+            of Manila Bay.
         </div>
 
         <div class="divider"></div>
@@ -162,6 +232,75 @@
         <img src="assets/pic3.jpg" class="after" alt="After image of Pasig River">
         <figcaption><a href="https://www.facebook.com/share/15QqRnzEYi/">Posted by Pasig River Coordinating and Management Office.</a></figcaption>
     </div>
+
+    <div class="divider"></div>
+
+    <div class="parex">
+        <h1>PAREX as the “Pasig River’s death sentence”</h1>
+    </div>
+
+    <div class="parex_info">
+        The Pasig Expressway (PAREX), proposed by San Miguel Corporation Infrastructure, 
+        is designed to be a 19.37-kilometer, six-lane elevated expressway running the 
+        entire stretch of the Pasig River. It aims to provide a faster route connecting 
+        Metro Manila’s major business districts, such as Makati, Ortigas, and Bonifacio Global City.<br><br>
+        Reducing traffic congestion and drastically reducing travel times throughout 
+        Metro Manila is the project's primary objective. Its secondary goal is to 
+        assist with the Pasig River's cleanup and rehabilitation.  Lastly, it could 
+        work alongside the ferry boats operating on the Pasig River.
+    </div>
+
+    <div class="after_image">
+        <img src="assets/parex.png" class="after" alt="After image of Pasig River">
+        <figcaption><a href="https://www.dpwh.gov.ph/dpwh/sites/default/files/PPP_images/parex.png">Source</a></figcaption>
+    </div>
+
+    <div class="controversy">
+        <h1>The Controversy Surrounding PAREX</h1>
+    </div>
+
+    <div class="controversy_info">
+        It may showcase itself to help alleviate the Manila traffic, but 
+        some who oppose call the PAREX as the “Pasig River’s death sentence,” 
+        as it will worsen and not solve traffic congestion. Aside from it being 
+        car centric, it will cause environmental issues such as killing of the 
+        Pasig River and heritage erasure.<br><br>
+        According to one of the petitions, the efforts made to restore the Pasig River 
+        will be in vain and will not take into account the demands of the next generation 
+        of the residents. Additionally, causing transport above the Pasig River will 
+        increase non-exhaust emissions like road dust, particulate matter, and microplastics 
+        from car tires, which will contaminate our rivers, streams, and oceans. 
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="references">
+        <h1 id="referencesTitle">References</h1>
+        <div id="referencesContent" style="display: none;">
+        <ol>
+            <li><a href="https://interaksyon.philstar.com/trends-spotlights/2019/01/29/143140/freshwater-fish-tilapia-caught-in-pasig-river-after-years-of-rehabilitation/#:~:text=It%20cited%20a%20study%20from,fish%E2%80%94had%20been%20living%20in">Madarang, C. R. S. (2019, January 29). Freshwater fish tilapia caught in Pasig River after years of rehabilitation. Interaksyon.</a></li>
+            <li><a href="https://hdl.handle.net/10589/88065">Pacchi, C. (2014, March 24). Civic engagement in urban water governance: the case of Pasig river rehabilitation in metropolitan Manila, The Philippines.</a></li>
+            <li>La Vina, Antonio G. M., & Reyes, J. M. (2022). Maladaptation, loss and damage, and the built environment: limits and possibilities. Ateneo Law Journal, 67(2), 377-410.</li>
+            <li><a href="https://www.flipscience.ph/features/whats-in-the-pasig-river/">https://www.flipscience.ph/features/whats-in-the-pasig-river/</a></li>
+            <li><a href="https://storymaps.arcgis.com/stories/f0119df351f448a18922b4a51fdde539">https://storymaps.arcgis.com/stories/f0119df351f448a18922b4a51fdde539</a></li>
+            <li><a href="https://animalia.bio/index.php/arius-manillensis">https://animalia.bio/index.php/arius-manillensis</a></li>
+            <li><a href="https://asbp.org.ph/wp-content/uploads/2020/08/PJSB-IJD2-2020-008.pdf">https://asbp.org.ph/wp-content/uploads/2020/08/PJSB-IJD2-2020-008.pdf</a></li>
+            <li><a href="https://www.researchgate.net/publication/200600415_Composition_Abundance_and_Distribution_of_Rotifers_in_the_Pasig_River_Philippines">https://www.researchgate.net/publication/200600415_Composition_Abundance_and_Distribution_of_Rotifers_in_the_Pasig_River_Philippines</a></li>
+            <li><a href="https://esmart.nhrc.upd.edu.ph/?p=786#:~:text=The%20word%20“Manila”%20originated%20from,for%20some%20fish%20and%20crustaceans.">https://esmart.nhrc.upd.edu.ph/?p=786#:~:text=The%20word%20“Manila”%20originated%20from,for%20some%20fish%20and%20crustaceans.</a></li>
+        </ol>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("referencesTitle").addEventListener("click", function() {
+            let content = document.getElementById("referencesContent");
+            if (content.style.display === "none") {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
+        });
+    </script>
 
     <footer>
         <h1>Footer</h1>

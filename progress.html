@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
-        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/progress.css">
     </head>
 
     <header>
@@ -24,7 +24,86 @@
     </header>
     
     <body>
-        <div class="heroimage">
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var slideIndex = 1;
+                showSlides(slideIndex);
+                
+                function plusSlides(n) {
+                  showSlides(slideIndex += n);
+                }
+                
+                function currentSlide(n) {
+                  showSlides(slideIndex = n);
+                }
+                
+                function showSlides(n) {
+                  var i;
+                  var slides = document.getElementsByClassName("mySlides");
+                  var dots = document.getElementsByClassName("dot");
+                  if (n > slides.length) {slideIndex = 1}    
+                  if (n < 1) {slideIndex = slides.length}
+                  for (i = 0; i < slides.length; i++) {
+                      slides[i].style.display = "none";  
+                  }
+                  for (i = 0; i < dots.length; i++) {
+                      dots[i].className = dots[i].className.replace(" active", "");
+                  }
+                  slides[slideIndex-1].style.display = "block";  
+                  dots[slideIndex-1].className += " active";
+                }
+
+                document.querySelector('.prev').addEventListener('click', function() {
+                    plusSlides(-1);
+                });
+
+                document.querySelector('.next').addEventListener('click', function() {
+                    plusSlides(1);
+                });
+
+                var dots = document.querySelectorAll('.dot');
+                dots.forEach(function(dot, index) {
+                    dot.addEventListener('click', function() {
+                        currentSlide(index + 1);
+                    });
+                });
+            });
+        </script>
+
+        <div class="divider"></div>
+
+        <div class="slideshow-container">
+
+            <div class="mySlides">
+                <h1>Pasig River Rehabilitation Project (PRRP)</h1>
+                <p class="author">Flagship project by Fidel Ramos. Funded by the Danish International Development Aid (DANIDA). The PRRP aims to clean the heavily polluted water to spur tourism growth, carve out new transportation routes and lure foreign investors</p>
+            </div>
+            
+            <div class="mySlides">
+                <h1>Pasig River Rehabilitation Program (PRRC Initiatives)</h1>
+                <p class="author">Established by President Joseph Estrada to centralize and strengthen rehabilitation efforts. The PRRC undertook various initiatives, including wastewater treatment, riverbank reforestation, informal settler relocation, and public awareness campaigns. Despite progress, rapid urbanization continued to pose significant challenges. However, in 2019, the PRRC was dissolved under President Rodrigo Duterte, with its functions transferred to the Department of Environment and Natural Resources (DENR)</p>
+            </div>
+            
+            <div class="mySlides">
+                <h1>Kapit-Bisig Para sa Ilog Pasig</h1>
+                <p class="author">Advocacy campaign spearheaded by the ABS-CBN Foundation as part of its efforts to rehabilitate the Pasig River. Launched in 2009 under the leadership of the late Gina Lopez, the initiative aimed to restore the river's water quality and promote environmental awareness.</p>
+            </div>
+
+            <div class="mySlides">
+                <h1>Piso Para sa Pasig</h1>
+                <p class="author">Fundraising campaign initiated by the Clean and Green Foundation in the 1990s, spearheaded by then-First Lady Amelita "Ming" Ramos. Its goal was to rehabilitate and restore the Pasig River, which had become heavily polluted and biologically dead by the 1980s due to rapid urbanization, industrial waste, and improper waste disposal</p>
+            </div>
+            
+            <a class="prev">❮</a>
+            <a class="next">❯</a>
+            
+        </div>
+            
+        <div class="dot-container">
+            <span class="dot"></span> 
+            <span class="dot"></span> 
+            <span class="dot"></span> 
+            <span class="dot"></span> 
         </div>
     </body>
 
