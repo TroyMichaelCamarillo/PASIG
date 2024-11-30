@@ -91,23 +91,36 @@ footer {
     outline: 10px double darkgreen;
 }
 
-/* Slideshow container */
 .slideshow-container {
     position: relative;
     width: 60%;
     border-radius: 20px;
     background: #f1f1f1;
-    margin: 50px auto 0px; /* Center the slideshow container */
+    margin: 50px auto 0px;
+    font-family: raleway;
 }
   
-/* Slides */
 .mySlides {
     display: none;
     padding: 80px;
     text-align: center;
+    outline: 5px solid darkgreen;
+    border-radius: 20px;
+}
+
+.Slides {
+    padding: 80px;
+    text-align: center;
+    outline: 5px solid darkgreen;
+    border-radius: 20px;
+    position: relative;
+    width: 60%;
+    border-radius: 20px;
+    background: #f1f1f1;
+    margin: 50px auto 0px;
+    font-family: raleway;
 }
   
-/* Next & previous buttons */
 .prev, .next {
     cursor: pointer;
     position: absolute;
@@ -120,28 +133,26 @@ footer {
     font-size: 20px;
     border-radius: 0 3px 3px 0;
     user-select: none;
+    transition: all 0.3s ease-in-out; 
 }
   
-/* Position the "next button" to the right */
 .next {
     position: absolute;
     right: 0;
     border-radius: 3px 0 0 3px;
 }
   
-/* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0, 100, 0, 0.8);
     color: white;
+    transition: all 0.3s ease-in-out; 
 }
   
-/* The dot/bullet/indicator container */
 .dot-container {
     text-align: center;
     padding: 20px;
 }
   
-/* The dots/bullets/indicators */
 .dot {
     cursor: pointer;
     height: 15px;
@@ -153,10 +164,20 @@ footer {
     transition: background-color 0.6s ease;
 }
   
-/* Add a background color to the active dot/circle */
 .active, .dot:hover {
     background-color: #717171;
 }
-  
-/* Add an italic font style to all quotes */
-q {font-style: italic;}
+
+.mySlides p{
+    font-size: 20px;
+}
+
+.title{
+    font-family: raleway;
+    width: 60%;
+    padding: 20px;
+    border-radius: 20px;
+    outline: 5px solid darkgreen;
+    margin: 0 auto;
+    text-align: center;
+}

@@ -1,0 +1,179 @@
+<html>
+<head>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            gap: 20px;
+            width: 746px;
+            margin: 0 auto;
+        }
+
+        .boxes {
+            width: 100%;
+            position: relative;
+            border-radius: 20px;
+            height: 520px;
+        }
+
+        .overlay-map {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.2;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .dot2 {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            position: absolute;
+            z-index: 2;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .dot2:hover {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* To modify dot positions, adjust these top/left values */
+        #dot1 { background: linear-gradient(45deg, #ff6b6b, #ff8e8e); top: 50px; left: 200px; }
+        #dot2 { background: linear-gradient(45deg, #4facfe, #00f2fe); top: 50px; left: 300px; }
+        #dot3 { background: linear-gradient(45deg, #43e97b, #38f9d7); top: 50px; left: 400px; }
+        #dot4 { background: linear-gradient(45deg, #fa709a, #fee140); top: 150px; left: 250px; }
+        #dot5 { background: linear-gradient(45deg, #a18cd1, #fbc2eb); top: 150px; left: 350px; }
+
+        .info-panel {
+            width: 95%;
+            padding: 20px;
+            background: #f5f5f5;
+            border-radius: 10px;
+            min-height: 200px;
+            margin-top: 20px;
+        }
+
+        .info-content {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .info-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .img {
+            position: relative;
+            z-index: 1;
+            margin: auto;
+            display: block;
+            border-radius: 20px;
+            outline: 5px solid darkgreen;
+            width: 100%;
+        }
+
+        .img img {
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="boxes">
+            <div class="img">
+                <img src="assets/map.png" alt="Map">
+                <div class="dot2" id="dot1"></div>
+                <div class="dot2" id="dot2"></div>
+                <div class="dot2" id="dot3"></div>
+                <div class="dot2" id="dot4"></div>
+                <div class="dot2" id="dot5"></div>
+            </div>
+        </div>
+        <div class="info-panel">
+            <div class="info-content" id="info1">
+                <h2>Pasig-Marikina River Channel Improvement Project (PMRCIP)</h2>
+                <p>Where: Area near Marikina and Pasig riverbanks. The river improvement works will be done along the 7.95-kilometer stretch of Lower/Middle Marikina River.</p>
+                <p>Aims to further mitigate flooding due to overflow of Pasig and Marikina Rivers to facilitate urban development and enhance the sustainable environment along the river.</p>
+                <p>Source: <a href="https://www.dpwh.gov.ph/dpwh/news/24601" target="_blank">https://www.dpwh.gov.ph/dpwh/news/24601</a></p>
+                <h2>Area of Marikina in the map:</h2>
+                <img src="assets/marikina.png" alt="Marikina Map">
+            </div>
+            <div class="info-content" id="info2">
+                <h2>Pasig River Rehabilitation Project (PRRP)</h2>
+                <p>Flagship project by Fidel Ramos. Funded by the Danish International Development Aid (DANIDA). The PRRP aims to clean the heavily polluted water to spur tourism growth, carve out new transportation routes, and lure foreign investors.</p>
+                <p>Additional details: It also focused on maintaining the water quality of the river together with the bodies of water along it. Several stations for water quality and waste management are built.</p>
+                <p>Where: The major stations are: Manila, Marikina, Pateros, Quezon City, San Juan, and Taguig.</p>
+                <p>Source: <a href="https://denr.gov" target="_blank">https://denr.gov</a></p>
+                <img src="assets/prrp.png" alt="PRRP Image">
+            </div>
+            <div class="info-content" id="info3">
+                <h2>Pasig River Rehabilitation Program (PRRC Initiatives)</h2>
+                <p>Established by President Joseph Estrada to centralize and strengthen rehabilitation efforts. The PRRC undertook various initiatives, including wastewater treatment, riverbank reforestation, informal settler relocation, and public awareness campaigns. Despite progress, rapid urbanization continued to pose significant challenges. However, in 2019, the PRRC was dissolved under President Rodrigo Duterte, with its functions transferred to the Department of Environment and Natural Resources (DENR)</p>
+                <p>Where: The cleanup projects are done throughout the entirety of the river. However, there are tributaries connected to the river that are cleaned as well. Some of these are:</p>
+                <ul>
+                    <li>Estero de Binondo</li>
+                    <li>Estero de Paco</li>
+                    <li>Estero de Quiapo</li>
+                    <li>San Miguel River</li>
+                    <li>Estero de Aviles</li>
+                </ul>
+                <p>Source:</p>
+                <ul>
+                    <li><a href="https://www.hic-net.org/pasig-river-rehabilita" target="_blank">https://www.hic-net.org/pasig-river-rehabilita</a></li>
+                    <li><a href="https://www.dbm.gov.ph/index.php/management-2/580-prrc-highlights-milestones-and-priority-rehabilitation-activities-for-the-pasig-river-system" target="_blank">https://www.dbm.gov.ph/index.php/management-2/580-prrc-highlights-milestones-and-priority-rehabilitation-activities-for-the-pasig-river-system</a></li>
+                </ul>
+            </div>
+            <div class="info-content" id="info4">
+                <h2>Pasig River Urban Development (PRUD) Project</h2>
+                <p>Aimed to strike a balance between ecological restoration and urban development, ensuring that the Pasig River could serve as a centerpiece of Metro Manila's urban renewal. It sought to improve the quality of life for riverside communities while addressing the city’s environmental and infrastructural challenges.</p>
+                <p>Where: The project covers the entire 27 km length of the Pasig river from Laguna Lake to Manila Bay.</p>
+                <p>Source: <a href="https://kanto.ph/wp-content/uploads/2024/09/SHORTLIST_Pasig-River-Urban-Development.pdf" target="_blank">https://kanto.ph/wp-content/uploads/2024/09/SHORTLIST_Pasig-River-Urban-Development.pdf</a></p>
+                <img src="assets/prud.png" alt="PRUD Image">
+            </div>
+            <div class="info-content" id="info5">
+                <h2>Pasig Bigyang Buhay Muli</h2>
+                <p>It is an urban development project that seeks to transform the river into a center of economic activity and promote transport interconnectivity in Metro Manila and nearby provinces.</p>
+                <p>It is an ongoing project and its initial phase is about building a public park near the neglected area of the river. It has open-air sights with vintage Victorian lamp posts and statues depicting “Pandango sa Ilaw” dancers in a row of water fountains providing colorful lights that line the riverbank.</p>
+                <p>Where: Intramuros</p>
+                <p>Source:</p>
+                <ul>
+                    <li><a href="https://www.philstar.com/nation/2024/02/27/2336418/pasig-river-rehab-expands-intramuros" target="_blank">https://www.philstar.com/nation/2024/02/27/2336418/pasig-river-rehab-expands-intramuros</a></li>
+                    <li><a href="https://tribune.net.ph/2024/01/27/pasig-bigyang-buhay-muli-showcase-area-wows-crowd" target="_blank">https://tribune.net.ph/2024/01/27/pasig-bigyang-buhay-muli-showcase-area-wows-crowd</a></li>
+                </ul>
+                <h2>Area of Intramuros in the map:</h2>
+                <img src="assets/intramuros.png" alt="Intramuros Map">
+                <h2>Specific place for the public park of the project’s initial phase:</h2>
+                <img src="assets/initial.png" alt="Initial Phase of Public Park">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const dots = document.querySelectorAll('.dot2');
+            const infoContents = document.querySelectorAll('.info-content');
+
+            dots.forEach((dot, index) => {
+                dot.addEventListener('mouseenter', () => {
+                    infoContents.forEach(content => {
+                        content.classList.remove('active');
+                    });
+                    document.getElementById(`info${index + 1}`).classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
