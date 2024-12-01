@@ -15,7 +15,7 @@
                     <li><a href="about_us.html">About Us</a></li>
                     <li><a href="problem.html">The Problem</a></li>
                     <li><a href="progress.html" style="text-decoration: underline;"><b>Progress Made</b></a></li>
-                    <li><a href="volunteer.html">Volunteer</a></li>
+                    <li><a href="volunteer.html">Support</a></li>
                     <li><a href="blog.html">Blog/Updates</a></li>
                 </ul>
             </div>
@@ -137,30 +137,32 @@
 
         <div class="divider" id="projects"></div>
 
+        <div class="hotspot">
+            <h1>Projects Map</h1>
+        </div>
         <div class="container">
             <div class="boxes">
                 <div class="images" id="zoomableArea">
                         <img src="assets/map.png" alt="Map">
                         <div class="dot2" id="dot1" data-tooltip="Marikina"></div>
-                        <div class="dot2" id="dot2" data-tooltip="Taguig Station"></div>
-                        <div class="dot2" id="dot3" data-tooltip="Estero de Binondo"></div>
                         <div class="dot2" id="dot5" data-tooltip="Initial Phase for Intramuros"></div>
+                        <div class="dot2" id="dot2" data-tooltip="Taguig Station"></div>
                         <div class="dot2" id="dot6" data-tooltip="Pateros Station"></div>
-                        <div class="dot2" id="dot7" data-tooltip="Quezon Staion"></div>
+                        <div class="dot2" id="dot7" data-tooltip="Quezon City Station"></div>
                         <div class="dot2" id="dot8" data-tooltip="Manila Station"></div>
                         <div class="dot2" id="dot9" data-tooltip="Marikina Station"></div>
                         <div class="dot2" id="dot10" data-tooltip="San Juan Station"></div>
                         <div class="dot2" id="dot11" data-tooltip="Estero de Quiapo"></div>
                         <div class="dot2" id="dot12" data-tooltip="Estero de Paco"></div>
                         <div class="dot2" id="dot13" data-tooltip="Estero de Aviles"></div>
+                        <div class="dot2" id="dot3" data-tooltip="Estero de Binondo"></div>
                         <div class="dot2" id="dot14" data-tooltip="San Miguel River"></div>
                         <div class="dot2" id="dot15" data-tooltip="Pasig River"></div>
                         <div class="dot2" id="dot16" data-tooltip="Pasig River"></div>
-                        <div class="line" id="dot17" dta-tooltip="Pasig River"></div>
+                        <div class="line" id="dot17" data-tooltip="Pasig River"></div>
                         <div class="line" id="dot4" data-tooltip="Pasig River"></div>
                         <div class="line" id="dot18" data-tooltip="Pasig River"></div>
                         <div class="line" id="dot19" data-tooltip="Pasig River"></div>
-                        
                 </div>
             </div>
 
@@ -202,7 +204,14 @@
             </div>
         </div>
 
-        <div class="divider"></div>
+        <div class="divider" id="hotspot"></div>
+        <div class="hotspot">
+            <h1>Diversity Hotspot</h1>
+        </div>
+
+        <embed src="map2.html" height="1000px" width="100%" style="max-height: 887px;">
+            
+            
     </body>
 
     <script>
@@ -258,7 +267,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.getElementById('info3').classList.add('active');
             } else if (['dot15', 'dot16', 'dot17', 'dot18', 'dot19'].includes(dotId)) {
                 document.getElementById('info4').classList.add('active');
-            } else {
+            }
+            else {
                 const infoId = `info${dotId.replace('dot', '')}`;
                 document.getElementById(infoId).classList.add('active');
             }

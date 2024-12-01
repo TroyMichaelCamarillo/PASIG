@@ -12,6 +12,14 @@ body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, header, footer, div {
 }
 
 @font-face {
+    font-family: 'MontserratBold';
+    src: url('../fonts/Montserrat-ExtraBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
     font-family: 'Georgia';
     src: url('../fonts/georgia.ttf') format('truetype');
     font-weight: normal;
@@ -127,11 +135,12 @@ footer {
 
 .name{
     font-size: 150px;
-    font-family: Montserrat;
+    font-family: MontserratBold;
     text-align: center;
     margin: 30px;
     color: white;
     letter-spacing: 10px;
+    font-weight: bolder;
 }
 
 .slider{
@@ -160,10 +169,6 @@ footer {
 .infos a{
     margin: 50px;
     font-size: 30px;
-}
-
-.infos h2{
-    text-decoration: underline;
 }
 
 .infos {

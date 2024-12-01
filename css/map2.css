@@ -29,40 +29,8 @@ body {
     padding: 1px;
     margin-top: 70px;
     font-family: Georgia;
-    width: 90%;
     float: right;
-    overflow: hidden;
-}
-
-.sidebar{
-    width: 10%;
-    height: 100%;
-    background-color: white;
-    position: fixed;
-    top: 0;
-    left: 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5 );
-    font-family: montserrat;
-    float: left;
-    overflow: hidden;
-}
-
-.sidebar a {
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-    color: #45a049;
-    margin-bottom: 10px;
-    margin-top: 100px;
-    text-align: center;
-}
-.sidebar a:hover {
-    background-color: rgba(0, 100, 0, 0.2);
-}
-
-.sidebar_content {
-    margin-left: 220px;
-    padding: 20px;
+    width: 100%;
 }
 
 h1{
@@ -319,7 +287,7 @@ footer {
     font-family: Arial, sans-serif;
     gap: 20px;
     width: 100%;
-    margin: 100px 17% 150px;
+    margin: 50px 17% 150px;
     scale: 1.25;
 
 }
@@ -352,25 +320,12 @@ footer {
 }
 
 /* Adjust dot positions */
-#dot1 { outline: 1px solid orange; top: 220px; left: 380px; scale: 4; width: 15px; height: 30px; border-radius: 20px;}
-#dot2 { outline: 2px solid #4facfe; top: 278px; left: 345px; }
-#dot3 { outline: 2px solid #43e97b; top: 155px; left: 105px; height: 40px;}
+#dot1 { outline: 1px solid orange; top: 190px; left: 400px; scale: 4; height: 50px; border-radius: 5px;}
+#dot2 { outline: 2px solid #4facfe; top: 280px; left: 360px; }
+#dot3 { outline: 2px solid #43e97b; top: 150px; left: 100px; height: 40px;}
 #dot4 { outline: 2px solid #fa709a; top: 170px; left: 90px; transform: rotate(70deg); width: 50px;}
-#dot5 { outline: 2px solid #a18cd1; top: 180px; left: 125px; scale: .6;}
-#dot6 { outline: 2px solid #4facfe; top: 295px; left: 370px; }
-#dot7 { outline: 2px solid #4facfe; top: 235px; left: 390px; }
-#dot8 { outline: 2px solid #4facfe; top: 185px; left: 85px; }
-#dot9 { outline: 2px solid #4facfe; top: 165px; left: 410px; }
-#dot10 { outline: 2px solid #4facfe; top: 200px; left: 230px; }
-#dot11 { outline: 2px solid #43e97b; top: 165px; left: 147px; height: 40px; z-index: 1;}
-#dot12 { outline: 2px solid #43e97b; top: 200px; left: 160px; height: 40px; z-index: 1; scale: 1.2;}
-#dot13 { outline: 2px solid #43e97b; top: 150px; left: 175px; height: 40px; z-index: 1; scale: 1.2;}
-#dot14 { outline: 2px solid #43e97b; top: 270px; left: 425px; height: 40px; scale: 1.2;}
-#dot15 { outline: 3px solid #fa709a; top: 185px; left: 145px; transform: rotate(25deg); }
-#dot16 { outline: 3px solid #fa709a; top: 181px; left: 175px; transform: rotate(25deg); scale: .5}
-#dot17 { outline: 3px solid #fa709a; top: 225px; left: 157px; transform: rotate(70deg); width: 35px;}
-#dot18 { outline: 3px solid #fa709a; top: 220px; left: 340px; transform: rotate(110deg); width: 130px;}
-#dot19 { outline: 3px solid #fa709a; top: 270px; left: 390px; transform: rotate(-30deg); width: 60px;}
+#dot5 { outline: 2px solid #a18cd1; top: 165px; left: 120px; scale: .6;}
+#dot15 { outline: 3px solid #fa709a; top: 180px; left: 140px; transform: rotate(25deg); }
 
 .info-panel {
     margin-top: -160px;
@@ -440,8 +395,6 @@ footer {
     border-radius: 20px;
     width: 100%;
     height: 468px;
-    max-width: 100%;
-    min-width: 100%;
 }
 
 .images img {
@@ -471,13 +424,18 @@ footer {
 .toggle-btn:hover {
     background-color: #45a049;
 }
-
-.hotspot{
-    font-family: montserrat;
-    width: 80%;
-    outline: 5px solid darkgreen;
-    text-align: center;
-    margin: 0 auto;
-    border-radius: 20px;
-    padding: 20px;
+/*
+#zoomableArea {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    transition: transform 0.3s ease, transform-origin 0.3s ease;
+    z-index: 1;
 }
+
+.zoomed {
+    transform: scale(1.4);
+    transform-origin: center;
+}
+*/
