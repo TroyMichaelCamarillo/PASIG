@@ -56,6 +56,7 @@ h2{
     z-index: 1000;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5 );
     font-family: montserrat;
+    align-items: center;
 }
 
 footer {
@@ -141,6 +142,7 @@ footer {
     color: white;
     letter-spacing: 10px;
     font-weight: bolder;
+    text-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
 }
 
 .slider{
@@ -163,6 +165,11 @@ footer {
     scale: 1.05;
     background-color: darkgreen;
     color: white;
+}
+
+.slider:hover button {
+    background-color: white;
+    color: darkgreen;
 }
 
 

@@ -420,7 +420,7 @@ footer {
     font-family: montserrat;
     position: absolute;
     top: -5px;
-    left: 50%;
+    right: 2%;
 }
 
 .toggle-btn:hover {

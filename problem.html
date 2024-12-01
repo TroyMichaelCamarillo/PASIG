@@ -5,6 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>The Problem</title>
         <link rel="stylesheet" href="css/problem.css">
+        <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+
     </head>
 
     <header>
@@ -16,12 +18,15 @@
                     <li><a href="about_us.html">About Us</a></li>
                     <li><a href="problem.html" style="text-decoration: underline;"><b>The Problem</b></a></li>
                     <li><a href="progress.html">Progress Made</a></li>
-                    <li><a href="volunteer.html">Support</a></li>
+                    <li><a href="volunteer.html">Support/Donate</a></li>
                     <li><a href="blog.html">Blog/Updates</a></li>
                 </ul>
             </div>
         </div>
     </header>
+
+    <button onclick="toggleSidebar()" class="toggle-side">></button>
+
     
     <div class="sidebar">
         <h2>
@@ -33,6 +38,29 @@
     </div>
 
     <body>
+        <script>
+            function toggleSidebar() {
+                const sidebar = document.querySelector('.sidebar');
+                const resizableElements = document.querySelectorAll('.resizable');
+                const toggleButton = document.querySelector('.toggle-side');
+            
+                if (sidebar.classList.contains('hidden')) {
+                    sidebar.classList.remove('hidden');
+                    resizableElements.forEach(element => {
+                        element.classList.remove('full-width');
+                        element.classList.add('reduced-width');
+                    });
+                    toggleButton.classList.remove('translated');
+                } else {
+                    sidebar.classList.add('hidden');
+                    resizableElements.forEach(element => {
+                        element.classList.remove('reduced-width');
+                        element.classList.add('full-width');
+                    });
+                    toggleButton.classList.add('translated');
+                }
+            }
+            </script>
         <script>
             let slideIndex = 1;
             document.addEventListener("DOMContentLoaded", function() {
@@ -116,7 +144,7 @@
                         });
                     });
                 </script>
-
+<div class="resizable">
         <div class="divider"></div>
 
         <div class="title">
@@ -392,6 +420,7 @@
         </ol>
         </div>
     </div>
+</div>
 
     <script>
         document.getElementById("referencesTitle").addEventListener("click", function() {

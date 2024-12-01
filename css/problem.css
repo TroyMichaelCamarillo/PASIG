@@ -21,6 +21,7 @@ body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, header, footer, div {
 html, body {
     overflow-x: hidden;
     background-color: #f0ead6;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -41,10 +42,15 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5 );
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     font-family: montserrat;
     float: left;
     overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.sidebar.hidden {
+    transform: translateX(-100%);
 }
 
 .sidebar a {
@@ -63,6 +69,40 @@ body {
 .sidebar_content {
     margin-left: 220px;
     padding: 20px;
+}
+
+.toggle-side{
+    position: fixed;
+    top: 430px;
+    left: 190px;
+    background-color: white;
+    color: darkgreen;
+    padding: 10px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    z-index: 1000;
+    outline: white;
+    transition: left 0.3s;
+    outline: none;
+    box-shadow: none; /* Remove any potential focus ring */
+}
+
+.toggle-side.translated {
+    left: 0;
+}
+
+.resizable {
+    transition: width 0.3s;
+}
+
+.resizable.full-width {
+    width: 90%;
+}
+
+.resizable.reduced-width {
+    width: 100%;
 }
 
 .section {
@@ -385,6 +425,12 @@ footer {
     padding: 20px;
     font-size: 20px;
     margin-bottom: 20px;
+}
+
+.beforeinfo:hover{
+    background-color: darkgreen;
+    color: white;
+    transition: all 0.3s ease-in-out;
 }
 
 .beforesegment{

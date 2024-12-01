@@ -3,8 +3,10 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>Progress Made</title>
         <link rel="stylesheet" href="css/progress.css">
+        <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+
     </head>
 
     <header>
@@ -16,23 +18,50 @@
                     <li><a href="about_us.html">About Us</a></li>
                     <li><a href="problem.html">The Problem</a></li>
                     <li><a href="progress.html" style="text-decoration: underline;"><b>Progress Made</b></a></li>
-                    <li><a href="volunteer.html">Support</a></li>
+                    <li><a href="volunteer.html">Support/Donate</a></li>
                     <li><a href="blog.html">Blog/Updates</a></li>
                 </ul>
             </div>
         </div>
     </header>
-    
+
+    <button onclick="toggleSidebar()" class="toggle-side">></button>
+
     <div class="sidebar">
+
         <h2>
         <a href="#done">What Has Been Done</a>
         <a href="#current">Current Being Done</a>
         <a href="#projects">Projects Map</a>
         <a href="#hotspot">Hotspots of Biodiversity</a>
         </h2>
+        
     </div>
 
     <body>
+        <script>
+            function toggleSidebar() {
+                const sidebar = document.querySelector('.sidebar');
+                const resizableElements = document.querySelectorAll('.resizable');
+                const toggleButton = document.querySelector('.toggle-side');
+            
+                if (sidebar.classList.contains('hidden')) {
+                    sidebar.classList.remove('hidden');
+                    resizableElements.forEach(element => {
+                        element.classList.remove('full-width');
+                        element.classList.add('reduced-width');
+                    });
+                    toggleButton.classList.remove('translated');
+                } else {
+                    sidebar.classList.add('hidden');
+                    resizableElements.forEach(element => {
+                        element.classList.remove('reduced-width');
+                        element.classList.add('full-width');
+                    });
+                    toggleButton.classList.add('translated');
+                }
+            }
+            </script>
         <script>
             document.addEventListener('DOMContentLoaded', function() {
                 var slideIndex = 1;
@@ -78,7 +107,7 @@
                 });
             });
         </script>
-
+    <div class="resizable">
         <div class="divider" id="done"></div>
 
         <div class="title">
@@ -141,6 +170,8 @@
         <div class="hotspot">
             <h1>Projects Map</h1>
         </div>
+    </div>
+    <div class="non">
         <div class="container">
             <div class="boxes">
                 <div class="images" id="zoomableArea">
@@ -158,17 +189,18 @@
                         <div class="dot2" id="dot13" data-tooltip="Estero de Aviles"></div>
                         <div class="dot2" id="dot3" data-tooltip="Estero de Binondo"></div>
                         <div class="dot2" id="dot14" data-tooltip="San Miguel River"></div>
-                        <div class="dot2" id="dot15" data-tooltip="Pasig River"></div>
-                        <div class="dot2" id="dot16" data-tooltip="Pasig River"></div>
-                        <div class="line" id="dot17" data-tooltip="Pasig River"></div>
-                        <div class="line" id="dot4" data-tooltip="Pasig River"></div>
-                        <div class="line" id="dot18" data-tooltip="Pasig River"></div>
-                        <div class="line" id="dot19" data-tooltip="Pasig River"></div>
+                        <div class="dot2" id="dot15" data-tooltip="Distributaries/Streams"></div>
+                        <div class="dot2" id="dot16" data-tooltip="Distributaries/Streams"></div>
+                        <div class="line" id="dot17" data-tooltip="Distributaries/Streams"></div>
+                        <div class="line" id="dot4" data-tooltip="Distributaries/Streams"></div>
+                        <div class="line" id="dot18" data-tooltip="Distributaries/Streams"></div>
+                        <div class="line" id="dot19" data-tooltip="Distributaries/Streams"></div>
+                        <button class="toggle-btn" id="toggleButton">Toggle Dots/<br>Lines Visibility</button>
+
                 </div>
             </div>
 
             <div class="info-panel">
-                <button class="toggle-btn" id="toggleButton">Toggle Dots/Lines Visibility</button>
                 <div class="info-content" id="info1">
                     <div class="info-content" id="info1"></div>
                         <h2>Pasig-Marikina River Channel Improvement Project (PMRCIP)</h2><br>
@@ -211,7 +243,7 @@
         </div>
 
         <embed src="map2.html" height="1000px" width="100%" style="max-height: 887px;">
-            
+    </div>
             
     </body>
 
