@@ -11,6 +11,7 @@
         <div class="header">
             <div class="navigation">
                 <ul>
+                    <li><img src="assets/logo.png" style="height: 100px; width: 100px; z-index: 10; margin-left: 190px; margin-top: 20px;"></li>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about_us.html">About Us</a></li>
                     <li><a href="problem.html">The Problem</a></li>
@@ -216,14 +217,31 @@
 
     <script>
 document.addEventListener('DOMContentLoaded', () => {
-    const dots = document.querySelectorAll('.dot2, .line');  // Select all dots and lines
-    const infoContents = document.querySelectorAll('.info-content');  // Select all info panels
-    const tooltip = document.createElement('div');  // Create a new tooltip element
-    tooltip.className = 'tooltip';  // Add the tooltip class for styling
-    document.body.appendChild(tooltip);  // Append the tooltip to the body
+    const dots = document.querySelectorAll('.dot2, .line'); // Select all dots and lines
+    const infoContents = document.querySelectorAll('.info-content'); // Select all info panels
+    const tooltip = document.createElement('div'); // Create a new tooltip element
+    tooltip.className = 'tooltip'; // Add the tooltip class for styling
+    document.body.appendChild(tooltip); // Append the tooltip to the body
 
-    const toggleButton = document.getElementById('toggleButton');  // Get the toggle button
-    const zoomableArea = document.getElementById('zoomableArea');  // Get the zoomable area
+    const toggleButton = document.getElementById('toggleButton'); // Get the toggle button
+
+    // Grouping dots by categories
+    const groups = {
+        group1: ['dot1'], // Dot 1
+        group2: ['dot5'], // Dot 5
+        group3: ['dot2', 'dot6', 'dot7', 'dot8', 'dot9', 'dot10'], // Group 3
+        group4: ['dot3', 'dot11', 'dot12', 'dot13', 'dot14'], // Group 4
+        group5: ['dot4', 'dot15', 'dot16', 'dot17', 'dot18', 'dot19'], // Group 5
+    };
+
+    // Map group names to their corresponding info panel IDs
+    const infoMap = {
+        group1: 'info1',
+        group2: 'info2',
+        group3: 'info3',
+        group4: 'info4',
+        group5: 'info5',
+    };
 
     // Variable to track visibility of dots/lines
     let isHidden = false;
@@ -231,68 +249,55 @@ document.addEventListener('DOMContentLoaded', () => {
     // Toggle dots/lines visibility when the button is clicked
     toggleButton.addEventListener('click', () => {
         dots.forEach((dot) => {
-            dot.style.opacity = isHidden ? '1' : '0';  // Toggle opacity of the dots/lines
+            dot.style.opacity = isHidden ? '1' : '0'; // Toggle opacity of the dots/lines
         });
-        isHidden = !isHidden;  // Toggle the hidden state
+        isHidden = !isHidden; // Toggle the hidden state
     });
 
     // Loop through all dots and lines
     dots.forEach((dot) => {
         dot.addEventListener('mouseenter', (e) => {
-            // Highlight the hovered dot by changing opacity
-            dots.forEach((el) => el.style.opacity = '0');
-            e.target.style.opacity = '1';
+            // Highlight the hovered dot and its group by changing opacity
+            const groupName = Object.keys(groups).find((group) =>
+                groups[group].includes(dot.id)
+            );
 
-            // Calculate the transform-origin for zooming effect based on hovered dot's position
-            const rect = dot.getBoundingClientRect();
-            const areaRect = zoomableArea.getBoundingClientRect();
-            const xPercent = ((rect.left + rect.width / 2) - areaRect.left) / areaRect.width * 100;
-            const yPercent = ((rect.top + rect.height / 2) - areaRect.top) / areaRect.height * 100;
-
-            // Set the transform origin for zoom effect
-            zoomableArea.style.transformOrigin = `${xPercent}% ${yPercent}%`;
-            zoomableArea.classList.add('zoomed');
+            if (groupName) {
+                groups[groupName].forEach((groupDotId) => {
+                    const groupDot = document.getElementById(groupDotId);
+                    if (groupDot) groupDot.style.opacity = '1'; // Make all dots in the same group visible
+                });
+            }
 
             // Display the tooltip with the dot's data-tooltip text
             tooltip.textContent = dot.dataset.tooltip;
-            tooltip.classList.add('visible');  // Make tooltip visible
+            tooltip.classList.add('visible'); // Make tooltip visible
 
-            // Show the corresponding info panel based on the hovered dot's ID
-            infoContents.forEach(content => content.classList.remove('active'));
-
-            const dotId = dot.id;
-            if (['dot6', 'dot7', 'dot8', 'dot9', 'dot10'].includes(dotId)) {
-                document.getElementById('info2').classList.add('active');
-            } else if (['dot11', 'dot12', 'dot13', 'dot14'].includes(dotId)) {
-                document.getElementById('info3').classList.add('active');
-            } else if (['dot15', 'dot16', 'dot17', 'dot18', 'dot19'].includes(dotId)) {
-                document.getElementById('info4').classList.add('active');
-            }
-            else {
-                const infoId = `info${dotId.replace('dot', '')}`;
-                document.getElementById(infoId).classList.add('active');
+            // Show the corresponding info panel
+            infoContents.forEach(content => content.classList.remove('active')); // Remove active from all
+            if (groupName && infoMap[groupName]) {
+                document.getElementById(infoMap[groupName]).classList.add('active'); // Show the relevant info
             }
         });
 
         // Move the tooltip to follow the mouse
         dot.addEventListener('mousemove', (e) => {
-            tooltip.style.left = `${e.pageX + 10}px`;  // Offset slightly to avoid overlapping the cursor
+            tooltip.style.left = `${e.pageX + 10}px`; // Offset slightly to avoid overlapping the cursor
             tooltip.style.top = `${e.pageY + 10}px`;
         });
 
         // Reset when the mouse leaves the dot
         dot.addEventListener('mouseleave', () => {
-            // Restore low opacity for all dots
+            // Restore default opacity for all dots
             dots.forEach((el) => el.style.opacity = '0');
-
-            // Reset zoom
-            zoomableArea.classList.remove('zoomed');
 
             // Hide tooltip
             tooltip.classList.remove('visible');
         });
     });
 });
+
+
 
     </script>
     <footer>

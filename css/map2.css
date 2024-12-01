@@ -310,22 +310,24 @@ footer {
     opacity: 0;
 }
 
-.line {
-    height: 6px;
-    border-radius: 3px;
-}
-
 .dot2:hover, .line:hover {
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
 /* Adjust dot positions */
-#dot1 { outline: 1px solid orange; top: 190px; left: 400px; scale: 4; height: 50px; border-radius: 5px;}
-#dot2 { outline: 2px solid #4facfe; top: 280px; left: 360px; }
-#dot3 { outline: 2px solid #43e97b; top: 150px; left: 100px; height: 40px;}
-#dot4 { outline: 2px solid #fa709a; top: 170px; left: 90px; transform: rotate(70deg); width: 50px;}
-#dot5 { outline: 2px solid #a18cd1; top: 165px; left: 120px; scale: .6;}
-#dot15 { outline: 3px solid #fa709a; top: 180px; left: 140px; transform: rotate(25deg); }
+#dot1 { outline: 1px solid orange; top: 185px; left: 95px; scale: 1.2}
+#dot2 { outline: 2px solid #4facfe; top: 180px; left: 120px; scale: 4; width: 30px;}
+#dot3 { outline: 2px solid #43e97b; top: 220px; left: 120px; scale: 5; width: 40px;}
+#dot4 { outline: 2px solid #fa709a; top: 190px; left: 130px;}
+#dot5 { outline: 2px solid #a18cd1; top: 165px; left: 120px;}
+#dot6 { outline: 1px solid orange; top: 330px; left: 430px; scale: 1.7;}
+#dot7 { outline: 2px solid #4facfe; top: 240px; left: 260px; scale: 3.5; width: 25px;}
+#dot8 { outline: 2px solid #fa709a; top: 190px; left: 225px;}
+#dot9 { outline: 2px solid #fa709a; top: 225px; left: 230px;}
+#dot10 { outline: 2px solid #fa709a; top: 280px; left: 370px;}
+#dot11 { outline: 2px solid #fa709a; top: 360px; left: 455px;}
+
+
 
 .info-panel {
     margin-top: -160px;

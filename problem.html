@@ -11,6 +11,7 @@
         <div class="header">
             <div class="navigation">
                 <ul>
+                    <li><img src="assets/logo.png" style="height: 100px; width: 100px; z-index: 10; margin-left: 190px; margin-top: 20px;"></li>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about_us.html">About Us</a></li>
                     <li><a href="problem.html" style="text-decoration: underline;"><b>The Problem</b></a></li>
@@ -70,6 +71,51 @@
                 }
             }
         </script>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        var slideIndex = 1;
+                        showSlides(slideIndex);
+                        
+                        function plusSlides(n) {
+                          showSlides(slideIndex += n);
+                        }
+                        
+                        function currentSlide(n) {
+                          showSlides(slideIndex = n);
+                        }
+                        
+                        function showSlides(n) {
+                          var i;
+                          var slides = document.getElementsByClassName("mySlides2");
+                          var dots = document.getElementsByClassName("dot");
+                          if (n > slides.length) {slideIndex = 1}    
+                          if (n < 1) {slideIndex = slides.length}
+                          for (i = 0; i < slides.length; i++) {
+                              slides[i].style.display = "none";  
+                          }
+                          for (i = 0; i < dots.length; i++) {
+                              dots[i].className = dots[i].className.replace(" active", "");
+                          }
+                          slides[slideIndex-1].style.display = "block";  
+                          dots[slideIndex-1].className += " active";
+                        }
+        
+                        document.querySelector('.prev').addEventListener('click', function() {
+                            plusSlides(-1);
+                        });
+        
+                        document.querySelector('.next').addEventListener('click', function() {
+                            plusSlides(1);
+                        });
+        
+                        var dots = document.querySelectorAll('.dot');
+                        dots.forEach(function(dot, index) {
+                            dot.addEventListener('click', function() {
+                                currentSlide(index + 1);
+                            });
+                        });
+                    });
+                </script>
 
         <div class="divider"></div>
 
@@ -82,14 +128,75 @@
         <div class="before">
             <h1> BEFORE</h1>
         </div>
+        <div class="beforesegment">
+            <div class="beforeimage">
+                <figure>
+                    <img src="assets/before.jpg" class="before" alt="Before image of Pasig River">
+                    <figcaption>The Pasig River in the 1930s. / Photo by John Tewell</figcaption>
+                </figure>
+            </div>
 
-        <div class="beforeimage">
-            <figure>
-                <img src="assets/before.jpg" class="before" alt="Before image of Pasig River">
-                <figcaption>The Pasig River in the 1930s. / Photo by John Tewell</figcaption>
-            </figure>
+            <div class="beforeinfo">
+                <p>Historically, the Pasig River connected Manila Bay and Laguna de Bay, acting as a lifeline for the city. During the pre-colonial and Spanish colonial eras, it served as a center for trade and transportation. Due to the river's wealth, communities flourished along its banks. The river was rich in biodiversity, with fish and indigenous plants that provided for the livelihoods of the local populace. The river also had a cultural significance; it was frequently depicted as a symbol of life and connection in Filipino literature and history.</p>
+                <br>
+                <p>The Pasig River has historically played a crucial role in the lives of the residents along its banks. Here's how it has helped them over time:</p>
+            </div>
         </div>
 
+            <div class="slideshow-container2">
+
+                <div class="mySlides2">
+                    <h1>Historical Role in Trade and Commerce</h1><br>
+                    <p class="author">- Served as a major transportation route during the Spanish colonial period and earlier.</p>
+                    <p class="author">- Connected Manila Bay and Laguna de Bay, facilitating trade and commerce.</p>
+                    <a href="https://mirror.pia.gov.ph/features/2023/07/31/pasig-river-a-historical-waterway-of-cultural-significance"><p>Source</p></a>
+
+                </div>
+                
+                <div class="mySlides2">
+                    <h1>Transportation and Mobility</h1><br>
+                    <p class="author">- Provided a mode of transport for goods and people across Metro Manila and surrounding areas.</p>
+                    <p class="author">- Supported livelihoods of riverside communities through fishing, farming, and trade.</p>
+                    <a href="https://mirror.pia.gov.ph/features/2023/07/31/pasig-river-a-historical-waterway-of-cultural-significance"><p>Source</p></a>
+
+                </div>
+                
+                <div class="mySlides2">
+                    <h1>Current Livelihood Opportunities</h1><br>
+                    <p class="author">- Despite decline in commercial importance, some communities still rely on the river for income.</p>
+                    <a href="https://mirror.pia.gov.ph/features/2023/07/31/pasig-river-a-historical-waterway-of-cultural-significance"><p>Source</p></a>
+
+                </div>
+                
+                <div class="mySlides2">
+                    <h1>Flood Management and Drainage</h1><br>
+                    <p class="author">- Acts as a natural waterway to channel rainwater and excess water during typhoons.</p>
+                    <p class="author">- Crucial for flood control in Metro Manila, protecting lives and properties.</p>
+                    <a href="https://mirror.pia.gov.ph/features/2023/07/31/pasig-river-a-historical-waterway-of-cultural-significance"><p>Source</p></a>
+
+                </div>
+                
+                <div class="mySlides2">
+                    <h1>Cultural and Historical Significance</h1><br>
+                    <p class="author">- Reflects the rich heritage of Metro Manila's waterways and community life along its banks.</p>
+                    <a href="https://mirror.pia.gov.ph/features/2023/07/31/pasig-river-a-historical-waterway-of-cultural-significance"><p>Source</p></a>
+
+                </div>
+                
+                <a class="prev">❮</a>
+                <a class="next">❯</a>
+
+                <div class="dot-container">
+                    <span class="dot"></span> 
+                    <span class="dot"></span> 
+                    <span class="dot"></span> 
+                    <span class="dot"></span> 
+                    <span class="dot"></span> 
+                </div>
+                
+            </div>
+            </figcaption>
+                
         <div class="divider"></div>
 
         <div class="words">
@@ -281,6 +388,7 @@
             <li><a href="https://asbp.org.ph/wp-content/uploads/2020/08/PJSB-IJD2-2020-008.pdf">https://asbp.org.ph/wp-content/uploads/2020/08/PJSB-IJD2-2020-008.pdf</a></li>
             <li><a href="https://www.researchgate.net/publication/200600415_Composition_Abundance_and_Distribution_of_Rotifers_in_the_Pasig_River_Philippines">https://www.researchgate.net/publication/200600415_Composition_Abundance_and_Distribution_of_Rotifers_in_the_Pasig_River_Philippines</a></li>
             <li><a href="https://esmart.nhrc.upd.edu.ph/?p=786#:~:text=The%20word%20“Manila”%20originated%20from,for%20some%20fish%20and%20crustaceans.">https://esmart.nhrc.upd.edu.ph/?p=786#:~:text=The%20word%20“Manila”%20originated%20from,for%20some%20fish%20and%20crustaceans.</a></li>
+            <li><a href="https://mirror.pia.gov.ph/features/2023/07/31/pasig-river-a-historical-waterway-of-cultural-significance">https://mirror.pia.gov.ph/features/2023/07/31/pasig-river-a-historical-waterway-of-cultural-significance</a></li>
         </ol>
         </div>
     </div>
