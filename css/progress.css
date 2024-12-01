@@ -5,8 +5,15 @@ body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, header, footer, div {
 }
 
 @font-face {
-    font-family: 'Raleway';
-    src: url('fonts/Raleway-Regular.ttf') format('truetype');
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Georgia';
+    src: url('../fonts/georgia.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -17,13 +24,51 @@ html, body {
 }
 
 body {
-    font-family: Arial, sans-serif;
     line-height: 1.6;
     color: #333;
     padding: 1px;
-    margin-top: 80px;
+    margin-top: 70px;
+    font-family: Georgia;
+    width: 90%;
+    float: right;
 }
 
+.sidebar{
+    width: 10%;
+    height: 100%;
+    background-color: darkgreen;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5 );
+    font-family: montserrat;
+    float: left;
+    overflow: hidden;
+}
+
+.sidebar a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    margin-bottom: 10px;
+    margin-top: 100px;
+    color: white;
+    text-align: center;
+}
+.sidebar a:hover {
+    background-color: #ddd;
+}
+
+.sidebar_content {
+    margin-left: 220px;
+    padding: 20px;
+}
+
+h1{
+    font-family: Montserrat;
+
+}
 .header {
     background-color: darkgreen;
     padding: 0px 70px;
@@ -36,6 +81,7 @@ body {
     left: 0;
     z-index: 1000;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5 );
+    font-family: montserrat;
 }
 
 footer {
@@ -66,7 +112,6 @@ footer {
     position: absolute;
     top: 30px;
     font-size: 20px;
-    font-family: Raleway;
     transition: all 0.3s ease-in-out;
 }
 
@@ -80,6 +125,87 @@ footer {
     position: absolute;
     top: -20px;
     left: -25px;
+}
+
+.hero {
+    width: 95%;
+    border-radius: 20px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: 5px solid darkgreen;
+}
+
+.heroimage {
+    width: 50%;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 20px;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.heroimage a{
+    font-family: Georgia;
+    font-size: 20px;
+    color: white;
+}
+
+.content{
+    margin-top: 200px;
+}
+
+.name{
+    font-size: 150px;
+    font-family: Montserrat;
+    text-align: center;
+    margin: 30px;
+    color: white;
+    letter-spacing: 10px;
+}
+
+.slider{
+    width: 30%;
+    margin: 30px auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius: 20px;
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
+    transition: all 0.3s ease-in-out;
+    margin: 30px;
+    background-color: rgba(255, 255, 255, 0.8   );
+}
+
+.slider:hover {
+    scale: 1.05;
+    background-color: darkgreen;
+    color: white;
+}
+
+
+.infos a{
+    margin: 50px;
+    font-size: 30px;
+}
+
+.infos h2{
+    text-decoration: underline;
+}
+
+.infos {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 500px auto 0;
 }
 
 .divider{
@@ -97,7 +223,6 @@ footer {
     border-radius: 20px;
     background: #f1f1f1;
     margin: 50px auto 0px;
-    font-family: raleway;
 }
   
 .mySlides {
@@ -118,7 +243,11 @@ footer {
     border-radius: 20px;
     background: #f1f1f1;
     margin: 50px auto 0px;
-    font-family: raleway;
+}
+
+.Slides p{
+    font-family: georgia;
+    font-size: 20px;
 }
   
 .prev, .next {
@@ -170,10 +299,11 @@ footer {
 
 .mySlides p{
     font-size: 20px;
+    font-family: georgia;
 }
 
 .title{
-    font-family: raleway;
+    font-family: montserrat;
     width: 60%;
     padding: 20px;
     border-radius: 20px;
@@ -181,3 +311,178 @@ footer {
     margin: 0 auto;
     text-align: center;
 }
+
+.container {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    gap: 20px;
+    width: 100%;
+    margin: 150px 17% 200px;
+    scale: 1.25;
+}
+
+.boxes {
+    width: 40%;
+    position: relative;
+    background: #f8f8f8;
+    border-radius: 10px;
+    height: 300px;
+}
+
+.dot2, .line {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 2;
+    transition: box-shadow 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+
+}
+
+.line {
+    height: 6px;
+    border-radius: 3px;
+}
+
+.dot2:hover, .line:hover {
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+/* Adjust dot positions */
+#dot1 { outline: 1px solid orange; top: 220px; left: 420px; scale: 4; height: 50px; border-radius: 5px;}
+#dot2 { outline: 2px solid #4facfe; top: 310px; left: 380px; }
+#dot3 { outline: 2px solid #43e97b; top: 180px; left: 120px; height: 40px;}
+#dot4 { outline: 2px solid #fa709a; top: 200px; left: 110px; transform: rotate(70deg); width: 50px;}
+#dot5 { outline: 2px solid #a18cd1; top: 195px; left: 140px; scale: .6;}
+#dot6 { outline: 2px solid #4facfe; top: 325px; left: 410px; }
+#dot7 { outline: 2px solid #4facfe; top: 270px; left: 420px; }
+#dot8 { outline: 2px solid #4facfe; top: 200px; left: 100px; }
+#dot9 { outline: 2px solid #4facfe; top: 200px; left: 450px; }
+#dot10 { outline: 2px solid #4facfe; top: 230px; left: 250px; }
+#dot11 { outline: 2px solid #43e97b; top: 200px; left: 160px; height: 40px; z-index: 1;}
+#dot12 { outline: 2px solid #43e97b; top: 230px; left: 180px; height: 40px; z-index: 1; scale: 1.2;}
+#dot13 { outline: 2px solid #43e97b; top: 180px; left: 200px; height: 40px; z-index: 1; scale: 1.2;}
+#dot14 { outline: 2px solid #43e97b; top: 300px; left: 470px; height: 40px; scale: 1.2;}
+#dot15 { outline: 3px solid #fa709a; top: 210px; left: 160px; transform: rotate(25deg); }
+#dot16 { outline: 3px solid #fa709a; top: 206px; left: 200px; transform: rotate(25deg); scale: .5}
+#dot17 { outline: 3px solid #fa709a; top: 250px; left: 165px; transform: rotate(70deg); width: 35px;}
+#dot18 { outline: 3px solid #fa709a; top: 250px; left: 350px; transform: rotate(110deg); width: 130px;}
+#dot19 { outline: 3px solid #fa709a; top: 280px; left: 410px; transform: rotate(-30deg); width: 60px;}
+
+
+
+.info-panel {
+    margin-top: -160px;
+    width: 30%;
+    padding: 20px;
+    border-radius: 20px;
+    margin-top: 0px;
+    outline: 5px solid darkgreen;
+    z-index: 2;
+    font-family: georgia;
+    min-height: 430px; /* Set a minimum height */
+    max-height: 430px;
+    min-width: 300px;  /* Set a minimum width */
+    box-sizing: border-box; /* Ensure padding is included in the width and height */
+
+}
+
+.info-content {
+    display: none;
+    animation: fadeIn 0.3s ease;
+    background-color: rgba(0, 0, 0, 0 );
+    padding: 20px;
+}
+
+.info-content h2 {
+    font-family: montserrat;
+    text-align: center;
+}
+
+.info-content p {
+    font-family: georgia;
+    font-size: 15px;
+}
+
+.info-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.tooltip {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 10; /* Ensure it's above other elements */
+    font-family: montserrat;
+}
+
+.tooltip.visible {
+    visibility: visible; /* Make tooltip visible */
+    opacity: 1; /* Show the tooltip */
+}
+
+.images {
+    position: relative;
+    z-index: 1;
+    margin: auto;
+    display: block;
+    border-radius: 20px;
+    width: 100%;
+    height: 468px;
+}
+
+.images img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    border-radius: 20px;
+}
+
+.toggle-btn {
+    padding: 10px 20px;
+    background-color: darkgreen;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 20px auto;
+    display: block;
+    text-align: center;
+    font-family: montserrat;
+    position: absolute;
+    top: -5px;
+    left: 50%;
+}
+
+.toggle-btn:hover {
+    background-color: #45a049;
+}
+/*
+#zoomableArea {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    transition: transform 0.3s ease, transform-origin 0.3s ease;
+    z-index: 1;
+}
+
+.zoomed {
+    transform: scale(1.4);
+    transform-origin: center;
+}
+*/

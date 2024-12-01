@@ -5,8 +5,15 @@ body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, header, footer, div {
 }
 
 @font-face {
-    font-family: 'Raleway';
-    src: url('fonts/Raleway-Regular.ttf') format('truetype');
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Georgia';
+    src: url('../fonts/georgia.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -17,13 +24,56 @@ html, body {
 }
 
 body {
-    font-family: Arial, sans-serif;
     line-height: 1.6;
     color: #333;
     padding: 1px;
-    margin-top: 80px;
+    margin-top: 70px;
+    font-family: Georgia;
+    overflow: hidden;
+    width: 90%;
+    float: right;
 }
 
+.sidebar{
+    width: 10%;
+    height: 100%;
+    background-color: darkgreen;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5 );
+    font-family: montserrat;
+    float: left;
+    overflow: hidden;
+}
+
+.sidebar a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    margin-bottom: 10px;
+    margin-top: 100px;
+    color: white;
+    text-align: center;
+}
+.sidebar a:hover {
+    background-color: #ddd;
+}
+
+.sidebar_content {
+    margin-left: 220px;
+    padding: 20px;
+}
+
+.section {
+    margin-bottom: 50px;
+}
+
+h2{
+    font-family: Montserrat;
+
+}
 .header {
     background-color: darkgreen;
     padding: 0px 70px;
@@ -36,6 +86,7 @@ body {
     left: 0;
     z-index: 1000;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5 );
+    font-family: montserrat;
 }
 
 footer {
@@ -66,7 +117,6 @@ footer {
     position: absolute;
     top: 30px;
     font-size: 20px;
-    font-family: Raleway;
     transition: all 0.3s ease-in-out;
 }
 
@@ -80,6 +130,87 @@ footer {
     position: absolute;
     top: -20px;
     left: -25px;
+}
+
+.hero {
+    width: 95%;
+    border-radius: 20px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: 5px solid darkgreen;
+}
+
+.heroimage {
+    width: 50%;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 20px;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.heroimage a{
+    font-family: Georgia;
+    font-size: 20px;
+    color: white;
+}
+
+.content{
+    margin-top: 200px;
+}
+
+.name{
+    font-size: 150px;
+    font-family: Montserrat;
+    text-align: center;
+    margin: 30px;
+    color: white;
+    letter-spacing: 10px;
+}
+
+.slider{
+    width: 25%;
+    margin: 30px auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius: 20px;
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
+    transition: all 0.3s ease-in-out;
+    margin: 30px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.slider:hover {
+    scale: 1.05;
+    background-color: darkgreen;
+    color: white;
+}
+
+
+.infos a{
+    margin: 50px;
+    font-size: 30px;
+}
+
+.infos h2{
+    text-decoration: underline;
+}
+
+.infos {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: 500px auto 0;
 }
 
 .divider{
@@ -101,12 +232,12 @@ footer {
 }
 
 .title h1{
-    font-family: Raleway;
+    font-family: montserrat;
     text-align: center;
 }
 
 .title h2{
-    font-family: Raleway;
+    font-family: montserrat;
     text-align: left;
 }
 
@@ -120,6 +251,7 @@ footer {
     background-color: darkgreen;
     color: white;
     border-radius: 20px;
+    font-family: montserrat;
 }
 
 .before h1{
@@ -136,7 +268,7 @@ footer {
 
 .beforeimage figcaption{
     text-align: center;
-    font-family: raleway;
+    font-family: georgia;
     color: gray;
 }
 
@@ -146,7 +278,6 @@ footer {
 }
 
 .paragraph1{
-    font-family: raleway;
     font-size: 20px;
     width: 80%;
     height: auto;
@@ -167,7 +298,6 @@ footer {
 }
 
 .words{
-    font-family: raleway;
     font-size: 20px;
     width: 80%;
     height: auto;
@@ -204,7 +334,6 @@ footer {
     flex-wrap: wrap;
     border-radius: 20px;
     font-size: 20px;
-    font-family: raleway;
     text-align: center;
     padding: 10px;
     outline: 5px solid darkgreen;
@@ -234,7 +363,6 @@ footer {
     border-radius: 20px;
     padding: 20px;
     transition: all 0.3s ease-in-out; 
-    font-family: raleway;
     padding: 20px;
 }
 
@@ -244,6 +372,7 @@ footer {
 
 .infos_before h1{
     margin-right: 20px;
+    font-family: montserrat;
 }
 
 .vertical{
@@ -268,7 +397,6 @@ footer {
     border-radius: 20px;
     padding: 20px;
     transition: all 0.3s ease-in-out; 
-    font-family: raleway;
     padding: 20px;
     font-size: 20px;
 }
@@ -279,9 +407,23 @@ footer {
     transition: all 0.3s ease-in-out;
 }
 
+.after_seg{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 100px;
+    gap: 20px;
+}
+
+.flex{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 100px;
+    gap: 20px;
+}
+
 .after_image img{
-    width: auto;
-    height: auto;
+    width: 80%;
+    height: 80%;
     border-radius: 20px;
     transition: all 0.3s ease-in-out;
     outline: 5px solid darkgreen;
@@ -293,12 +435,37 @@ footer {
 
 .after_image figcaption{
     text-align: center;
-    font-family: raleway;
     color: gray;
     margin-top: 10px;
 }
 
 .after_image img:hover{
+    scale: 1.02;
+    transition: all 0.3s ease-in-out;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.parex_image img{
+    width: auto;
+    height: auto;
+    border-radius: 20px;
+    transition: all 0.3s ease-in-out;
+    outline: 5px solid darkgreen;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
+
+.parex_image figcaption{
+    text-align: center;
+    color: gray;
+    margin-top: 10px;
+}
+
+.parex_image img:hover{
     scale: 1.02;
     transition: all 0.3s ease-in-out;
 }
@@ -311,10 +478,10 @@ footer {
     margin: 60px auto;
     padding: 10px;
     text-align: center;
+    font-family: montserrat;
 }
 
 .words2{
-    font-family: raleway;
     font-size: 20px;
     width: 80%;
     height: auto;
@@ -323,7 +490,7 @@ footer {
     align-items: center;
     outline: 5px solid darkgreen;
     border-radius: 20px;
-    padding: 20px;
+    padding: 50px;
     transition: all 0.3s ease-in-out; 
 }
 
@@ -356,7 +523,7 @@ footer {
     position: absolute;
     top: 50%;
     width: auto;
-    padding: 16px;
+    padding: 26px;
     margin-top: -22px;
     color: white;
     font-weight: bold;
@@ -387,7 +554,6 @@ footer {
     width: 100%;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.7);
-    font-family: raleway;
     border-bottom-right-radius: 20px;
     border-bottom-left-radius: 20px;
 }
@@ -443,13 +609,12 @@ footer {
     border-radius: 20px;
     padding: 20px;
     transition: all 0.3s ease-in-out; 
-    font-family: raleway;
     padding: 20px;
     font-size: 20px;
 }
 
 .parex{
-    font-family: raleway;
+    font-family: montserrat;
     font-size: 20px;
     width: 80%;
     height: auto;
@@ -466,7 +631,6 @@ footer {
 }
 
 .parex_info{
-    font-family: raleway;
     font-size: 20px;
     width: 80%;
     height: auto;
@@ -498,13 +662,12 @@ footer {
     border-radius: 20px;
     padding: 20px;
     transition: all 0.3s ease-in-out;
-    font-family: raleway;
+    font-family: montserrat;
     text-align: center;
     flex-direction: column;
 }
 
 .controversy_info{
-    font-family: raleway;
     font-size: 20px;
     width: 80%;
     height: auto;
@@ -535,13 +698,12 @@ footer {
     border-radius: 20px;
     padding: 20px;
     transition: all 0.3s ease-in-out;
-    font-family: raleway;
     padding: 20px;
 }
 
 .references h1 {
     text-align: center;
-    font-family: raleway;
+    font-family: montserrat;
     cursor: pointer; /* Add cursor pointer to indicate it's clickable */
 }
 

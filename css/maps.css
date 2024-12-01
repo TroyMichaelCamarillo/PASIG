@@ -1,0 +1,323 @@
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, header, footer, div {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('fonts/Raleway-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body {
+    overflow-x: hidden;
+    background-color: #f0ead6;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    padding: 1px;
+    margin-top: 80px;
+}
+
+.header {
+    background-color: darkgreen;
+    padding: 0px 70px;
+    height: 70px;
+    width: 100%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5 );
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 0px 0;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    margin-top: 100px;
+}
+
+.navigation{
+    width: 90%;
+}
+
+.navigation ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+.navigation ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0px 0px;
+    position: absolute;
+    top: 30px;
+    font-size: 20px;
+    font-family: Raleway;
+    transition: all 0.3s ease-in-out;
+}
+
+.navigation a:hover {
+    scale: 1.3;
+    transition: all 0.3s ease-in-out;
+    text-decoration: underline;
+}
+
+.header img{
+    position: absolute;
+    top: -20px;
+    left: -25px;
+}
+
+.hero {
+    width: 95%;
+    border-radius: 20px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: 5px solid darkgreen;
+}
+
+.heroimage {
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 20px;
+    z-index: 0;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: 5px dotted darkgreen;
+    transition: all 0.3s ease-in-out;
+}
+
+.heroimage:hover {
+    background-color: darkgreen;
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+.heroimage a{
+    margin: 50px;
+    font-family: raleway;
+    font-size: 30px;
+}
+
+.slider{
+    width: 40%;
+    margin: 30px auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius: 20px;
+    font-size: 20px;
+    font-family: raleway;
+    text-align: center;
+    padding: 10px;
+    outline: 5px solid darkgreen;
+    transition: all 0.3s ease-in-out;
+}
+.slider:hover {
+    scale: 1.05;
+    background-color: darkgreen;
+    color: white;
+}
+
+
+.infos a{
+    margin: 50px;
+    font-size: 30px;
+}
+
+.infos h2{
+    text-decoration: underline;
+}
+
+.infos {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.divider{
+    width: 90%;
+    height: 2px;
+    background-color: darkgreen;
+    margin: 60px auto;
+    border-radius: 10px;
+    outline: 10px double darkgreen;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    gap: 20px;
+    width: 746px;
+    margin: 0 auto;
+}
+
+.boxes {
+    width: 100%;
+    position: relative;
+    background: #f8f8f8;
+    border-radius: 10px;
+    height: 300px;
+}
+
+.overlay-map {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.2;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.dot, .line {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 2;
+    transition: box-shadow 0.3s ease, opacity 0.3s ease;
+}
+
+.line {
+    height: 6px;
+    border-radius: 3px;
+}
+
+.dot:hover, .line:hover {
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+/* Adjust dot positions */
+#dot1 { outline: 3px solid #ff6b6b; top: 220px; left: 420px; scale: 4; height: 50px;}
+#dot2 { outline: 3px solid #4facfe; top: 310px; left: 380px; }
+#dot3 { outline: 3px solid #43e97b; top: 180px; left: 120px; height: 40px;}
+#dot4 { outline: 3px solid #fa709a; top: 200px; left: 110px; transform: rotate(70deg); width: 50px;}
+#dot5 { outline: 3px solid #a18cd1; top: 200px; left: 150px; }
+#dot6 { outline: 3px solid #4facfe; top: 325px; left: 410px; }
+#dot7 { outline: 3px solid #4facfe; top: 270px; left: 420px; }
+#dot8 { outline: 3px solid #4facfe; top: 200px; left: 100px; }
+#dot9 { outline: 3px solid #4facfe; top: 200px; left: 450px; }
+#dot10 { outline: 3px solid #4facfe; top: 230px; left: 250px; }
+#dot11 { outline: 3px solid #43e97b; top: 200px; left: 160px; height: 40px; z-index: 1;}
+#dot12 { outline: 3px solid #43e97b; top: 230px; left: 180px; height: 40px; z-index: 1; scale: 1.2;}
+#dot13 { outline: 3px solid #43e97b; top: 180px; left: 200px; height: 40px; z-index: 1; scale: 1.2;}
+#dot14 { outline: 3px solid #43e97b; top: 300px; left: 470px; height: 40px; scale: 1.2;}
+#dot15 { outline: 3px solid #fa709a; top: 210px; left: 160px; transform: rotate(25deg); }
+#dot16 { outline: 3px solid #fa709a; top: 206px; left: 200px; transform: rotate(25deg); scale: .5}
+#dot17 { outline: 3px solid #fa709a; top: 300px; left: 90px; transform: rotate(25deg); }
+#dot18 { outline: 3px solid #fa709a; top: 300px; left: 90px; transform: rotate(25deg); }
+#dot19 { outline: 3px solid #fa709a; top: 300px; left: 90px; transform: rotate(25deg); }
+
+
+
+.info-panel {
+    width: 95%;
+    padding: 20px;
+    background: #f5f5f5;
+    border-radius: 20px;
+    min-height: 200px;
+    margin-top: 200px;
+    outline: 5px solid darkgreen;
+    z-index: 2;
+}
+
+.info-content {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.info-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.tooltip {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}   
+
+.tooltip.visible {
+    opacity: 1;
+}
+.images {
+position: relative;
+z-index: 1;
+margin: auto;
+display: block;
+border-radius: 20px;
+outline: 5px solid darkgreen;
+width: 100%;
+}
+
+.images img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    border-radius: 20px;
+    outline: 5px solid darkgreen;
+}
+
+.toggle-btn {
+    padding: 10px 20px;
+    background-color: darkgreen;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 20px auto;
+}
+
+.toggle-btn:hover {
+    background-color: #45a049;
+}
+
+#zoomableArea {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    transition: transform 0.3s ease, transform-origin 0.3s ease;
+    z-index: 1;
+}
+
+.zoomed {
+    transform: scale(1.4); /* Adjust zoom level */
+    transform-origin: center; /* Default zoom origin */
+}

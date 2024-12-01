@@ -17,12 +17,20 @@
                     <li><a href="progress.html" style="text-decoration: underline;"><b>Progress Made</b></a></li>
                     <li><a href="volunteer.html">Volunteer</a></li>
                     <li><a href="blog.html">Blog/Updates</a></li>
-                    <li><a href="contacts.html">Contacts</a></li>
                 </ul>
             </div>
         </div>
     </header>
     
+    <div class="sidebar">
+        <h2>
+        <a href="#done">What Has Been Done</a>
+        <a href="#current">Current Being Done</a>
+        <a href="#projects">Projects Map</a>
+        <a href="#hotspot">Hotspots of Biodiversity</a>
+        </h2>
+    </div>
+
     <body>
         <script>
             document.addEventListener('DOMContentLoaded', function() {
@@ -70,7 +78,7 @@
             });
         </script>
 
-        <div class="divider"></div>
+        <div class="divider" id="done"></div>
 
         <div class="title">
             <h1>What has been done</h1>
@@ -113,7 +121,7 @@
             <span class="dot"></span> 
         </div>
 
-        <div class="divider"></div>
+        <div class="divider" id="current"></div>
 
         <div class="title">
             <h1>Currently Being Done</h1>
@@ -127,10 +135,156 @@
             "><p>Source</p></a>
         </div>
 
-        <div class="divider"></div>
+        <div class="divider" id="projects"></div>
 
+        <div class="container">
+            <div class="boxes">
+                <div class="images" id="zoomableArea">
+                        <img src="assets/map.png" alt="Map">
+                        <div class="dot2" id="dot1" data-tooltip="Marikina"></div>
+                        <div class="dot2" id="dot2" data-tooltip="Taguig Station"></div>
+                        <div class="dot2" id="dot3" data-tooltip="Estero de Binondo"></div>
+                        <div class="dot2" id="dot5" data-tooltip="Initial Phase for Intramuros"></div>
+                        <div class="dot2" id="dot6" data-tooltip="Pateros Station"></div>
+                        <div class="dot2" id="dot7" data-tooltip="Quezon Staion"></div>
+                        <div class="dot2" id="dot8" data-tooltip="Manila Station"></div>
+                        <div class="dot2" id="dot9" data-tooltip="Marikina Station"></div>
+                        <div class="dot2" id="dot10" data-tooltip="San Juan Station"></div>
+                        <div class="dot2" id="dot11" data-tooltip="Estero de Quiapo"></div>
+                        <div class="dot2" id="dot12" data-tooltip="Estero de Paco"></div>
+                        <div class="dot2" id="dot13" data-tooltip="Estero de Aviles"></div>
+                        <div class="dot2" id="dot14" data-tooltip="San Miguel River"></div>
+                        <div class="dot2" id="dot15" data-tooltip="Pasig River"></div>
+                        <div class="dot2" id="dot16" data-tooltip="Pasig River"></div>
+                        <div class="line" id="dot17" dta-tooltip="Pasig River"></div>
+                        <div class="line" id="dot4" data-tooltip="Pasig River"></div>
+                        <div class="line" id="dot18" data-tooltip="Pasig River"></div>
+                        <div class="line" id="dot19" data-tooltip="Pasig River"></div>
+                        
+                </div>
+            </div>
+
+            <div class="info-panel">
+                <button class="toggle-btn" id="toggleButton">Toggle Dots/Lines Visibility</button>
+                <div class="info-content" id="info1">
+                    <div class="info-content" id="info1"></div>
+                        <h2>Pasig-Marikina River Channel Improvement Project (PMRCIP)</h2><br>
+                        <p>Where: Area near Marikina and Pasig riverbanks. The river improvement works will be done along the 7.95-kilometer stretch of Lower/Middle Marikina River.</p>
+                        <p>Aims to further mitigate flooding due to overflow of Pasig and Marikina Rivers to facilitate urban development and enhance the sustainable environment along the river.</p>
+                        <a href="https://www.dpwh.gov.ph/dpwh/news/24601" target="_blank"><p>Source</p></a>
+                    </div>
+                    <div class="info-content" id="info2">
+                        <h2>Pasig River Rehabilitation Project (PRRP)</h2><br>
+                        <p>Flagship project by Fidel Ramos. Funded by the Danish International Development Aid (DANIDA). The PRRP aims to clean the heavily polluted water to spur tourism growth, carve out new transportation routes, and lure foreign investors.</p>
+                        <p>Additional details: It also focused on maintaining the water quality of the river together with the bodies of water along it. Several stations for water quality and waste management are built.</p>
+                        <p>Where: The major stations are: Manila, Marikina, Pateros, Quezon City, San Juan, and Taguig.</p>
+                        <a href="https://denr.gov" target="_blank"><p>Source</p></a>
+                    </div>
+                    <div class="info-content" id="info3">
+                        <h2>Pasig River Rehabilitation Program (PRRC Initiatives)</h2><br>
+                        <p>Established by President Joseph Estrada to centralize and strengthen rehabilitation efforts. The PRRC undertook various initiatives, including wastewater treatment, riverbank reforestation, informal settler relocation, and public awareness campaigns. Despite progress, rapid urbanization continued to pose significant challenges. However, in 2019, the PRRC was dissolved under President Rodrigo Duterte, with its functions transferred to the Department of Environment and Natural Resources (DENR)</p>
+                        <a href="https://www.dbm.gov.ph/index.php/management-2/580-prrc-highlights-milestones-and-priority-rehabilitation-activities-for-the-pasig-river-system" target="_blank"><p>Source</p></a>
+                    </div>
+                    <div class="info-content" id="info4">
+                        <h2>Pasig River Urban Development (PRUD) Project</h2><br>
+                        <p>Aimed to strike a balance between ecological restoration and urban development, ensuring that the Pasig River could serve as a centerpiece of Metro Manila's urban renewal. It sought to improve the quality of life for riverside communities while addressing the city’s environmental and infrastructural challenges.</p>
+                        <p>Where: The project covers the entire 27 km length of the Pasig river from Laguna Lake to Manila Bay.</p>
+                        <a href="https://kanto.ph/wp-content/uploads/2024/09/SHORTLIST_Pasig-River-Urban-Development.pdf" target="_blank"><p>Source</p></a>
+                    </div>
+                    <div class="info-content" id="info5">
+                        <h2>Pasig Bigyang Buhay Muli</h2><br>
+                        <p>It is an urban development project that seeks to transform the river into a center of economic activity and promote transport interconnectivity in Metro Manila and nearby provinces.</p>
+                        <p>It is an ongoing project and its initial phase is about building a public park near the neglected area of the river. It has open-air sights with vintage Victorian lamp posts and statues depicting “Pandango sa Ilaw” dancers in a row of water fountains providing colorful lights that line the riverbank.</p>
+                        <p>Where: Intramuros</p>
+                        <a href="https://tribune.net.ph/2024/01/27/pasig-bigyang-buhay-muli-showcase-area-wows-crowd" target="_blank"><p>Source:</p></a>
+
+                    </div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
     </body>
 
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+    const dots = document.querySelectorAll('.dot2, .line');  // Select all dots and lines
+    const infoContents = document.querySelectorAll('.info-content');  // Select all info panels
+    const tooltip = document.createElement('div');  // Create a new tooltip element
+    tooltip.className = 'tooltip';  // Add the tooltip class for styling
+    document.body.appendChild(tooltip);  // Append the tooltip to the body
+
+    const toggleButton = document.getElementById('toggleButton');  // Get the toggle button
+    const zoomableArea = document.getElementById('zoomableArea');  // Get the zoomable area
+
+    // Variable to track visibility of dots/lines
+    let isHidden = false;
+
+    // Toggle dots/lines visibility when the button is clicked
+    toggleButton.addEventListener('click', () => {
+        dots.forEach((dot) => {
+            dot.style.opacity = isHidden ? '1' : '0';  // Toggle opacity of the dots/lines
+        });
+        isHidden = !isHidden;  // Toggle the hidden state
+    });
+
+    // Loop through all dots and lines
+    dots.forEach((dot) => {
+        dot.addEventListener('mouseenter', (e) => {
+            // Highlight the hovered dot by changing opacity
+            dots.forEach((el) => el.style.opacity = '0');
+            e.target.style.opacity = '1';
+
+            // Calculate the transform-origin for zooming effect based on hovered dot's position
+            const rect = dot.getBoundingClientRect();
+            const areaRect = zoomableArea.getBoundingClientRect();
+            const xPercent = ((rect.left + rect.width / 2) - areaRect.left) / areaRect.width * 100;
+            const yPercent = ((rect.top + rect.height / 2) - areaRect.top) / areaRect.height * 100;
+
+            // Set the transform origin for zoom effect
+            zoomableArea.style.transformOrigin = `${xPercent}% ${yPercent}%`;
+            zoomableArea.classList.add('zoomed');
+
+            // Display the tooltip with the dot's data-tooltip text
+            tooltip.textContent = dot.dataset.tooltip;
+            tooltip.classList.add('visible');  // Make tooltip visible
+
+            // Show the corresponding info panel based on the hovered dot's ID
+            infoContents.forEach(content => content.classList.remove('active'));
+
+            const dotId = dot.id;
+            if (['dot6', 'dot7', 'dot8', 'dot9', 'dot10'].includes(dotId)) {
+                document.getElementById('info2').classList.add('active');
+            } else if (['dot11', 'dot12', 'dot13', 'dot14'].includes(dotId)) {
+                document.getElementById('info3').classList.add('active');
+            } else if (['dot15', 'dot16', 'dot17', 'dot18', 'dot19'].includes(dotId)) {
+                document.getElementById('info4').classList.add('active');
+            } else {
+                const infoId = `info${dotId.replace('dot', '')}`;
+                document.getElementById(infoId).classList.add('active');
+            }
+        });
+
+        // Move the tooltip to follow the mouse
+        dot.addEventListener('mousemove', (e) => {
+            tooltip.style.left = `${e.pageX + 10}px`;  // Offset slightly to avoid overlapping the cursor
+            tooltip.style.top = `${e.pageY + 10}px`;
+        });
+
+        // Reset when the mouse leaves the dot
+        dot.addEventListener('mouseleave', () => {
+            // Restore low opacity for all dots
+            dots.forEach((el) => el.style.opacity = '0');
+
+            // Reset zoom
+            zoomableArea.classList.remove('zoomed');
+
+            // Hide tooltip
+            tooltip.classList.remove('visible');
+        });
+    });
+});
+
+    </script>
     <footer>
         <h1>Footer</h1>
     </footer>
