@@ -258,7 +258,7 @@ footer {
 }
 
 .beforeimage img{
-    width: 130%;
+    width: 100%;
     border-radius: 20px;
     transition: all 0.3s ease-in-out;
     outline: 5px solid darkgreen;
