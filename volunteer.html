@@ -1,33 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <link rel="stylesheet" href="css/index.css">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support/Donate</title>
+    <link rel="stylesheet" href="css/volunteer.css">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+</head>
 
-    <header>
-        <div class="header">
-            <div class="navigation">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about_us.html">About Us</a></li>
-                    <li><a href="problem.html">The Problem</a></li>
-                    <li><a href="progress.html">Progress Made</a></li>
-                    <li><a href="volunteer.html" style="text-decoration: underline;"><b>Support</b></a></li>
-                    <li><a href="blog.html">Blog/Updates</a></li>
-                </ul>
+<header>
+    <div class="header">
+        <div class="navigation">
+            <ul>
+                <li><img src="assets/logo.png" style="height: 100px; width: 100px; z-index: 10; margin-left: 190px; margin-top: 20px;"></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about_us.html">About Us</a></li>
+                <li><a href="problem.html">The Problem</a></li>
+                <li><a href="progress.html">Progress Made</a></li>
+                <li><a href="volunteer.html" style="text-decoration: underline;"><b>Support/Donate</b></a></li>
+                <li><a href="blog.html">Blog/Updates</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<body>
+    <div class="title3">
+        <h1>How YOU can help:</h1><br>
+        <h2>Spread the Word: Share our website and social media posts to amplify the message.<br>
+            Volunteer: Join local Pasig River cleanups or eco-projects.<br>
+            Donate or Support: Contribute to organizations working for the rehabilitation of the river.<br>
+            Live Sustainably: Practice waste reduction and proper disposal to minimize pollution.
+        </h2>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="title4">
+        <h1>Volunteers</h1>
+    </div>
+
+    <div class="container">
+        <div class="slider">
+            <div class="slide-container">
+                <div class="slide">
+                    <h2 class="slide-title">Pasig River Coordinating and Management Office - PRCMO </h2>
+                    <div class="image-pair">
+                        <img src="assets/pics/1.jpg" class="placeholder-image">
+                        <img src="assets/pics/2.jpg" class="placeholder-image">
+                    </div>
+                </div>
+                <div class="slide">
+                    <h2 class="slide-title">ICTSI Foundation</h2>
+                    <div class="image-pair">
+                        <img src="assets/pics/3.png" class="placeholder-image">
+                        <img src="assets/pics/4.png" class="placeholder-image">
+                    </div>
+                </div>
+                <div class="slide">
+                    <h2 class="slide-title">Department of Environment and Natural Resources</h2>
+                    <div class="image-pair">
+                        <img src="assets/pics/5.jpg" class="placeholder-image">
+                        <img src="assets/pics/6.jpg" class="placeholder-image">
+                    </div>
+                </div>
             </div>
         </div>
-    </header>
     
-    <body>
-        <div class="heroimage">
+        <div class="nav-buttons">
+            <button onclick="prevSlide()"><h2>Previous</h2></button>
+            <button onclick="nextSlide()"><h2>Next</h2></button>
         </div>
-    </body>
+    </div>
 
-    <footer>
-        <h1>Footer</h1>
-    </footer>
+    <div class="divider"></div>
+    <div class="title2">
+        <h1>HELP SAVE PASIG RIVER BIODIVERSITY!</h1><br>
+        <h2>Every donation brings us closer to a thriving river teeming with life. Let’s protect nature together!</h2>
+    </div>
+
+    <button id="toggle-donation-form" class="donate-btn">Donate Now</button>
+
+    <form class="donation-form" id="donation-form" style="display: none;">
+        <h2 id="selected-amount">₱ 3,500.00</h2>
+        
+        <div class="preset-amounts">
+            <button type="button" data-amount="₱ 1,000.00">₱1,000.00</button>
+            <button type="button" data-amount="₱ 1,500.00">₱1,500.00</button>
+            <button type="button" data-amount="₱ 2,500.00">₱2,500.00</button>
+            <button type="button" class="active" data-amount="₱ 3,500.00">₱3,500.00</button>
+            <button type="button" data-amount="₱ 5,000.00">₱5,000.00</button>
+            <button type="button" data-amount="₱ 10,000.00">₱10,000.00</button>
+            <input type="text" id="custom-amount" placeholder="Custom Amount">
+        </div>
+
+        <div class="payment-method">
+            <h3>Select Payment Method</h3>
+            <label>
+                <input type="radio" name="payment" value="bank-transfer" checked>
+                Bank Payment
+            </label>
+            <label>
+                <input type="radio" name="payment" value="gcash">
+                GCash
+            </label>
+        </div>
+
+        <div class="personal-info">
+            <h3>Personal Info</h3>
+            <label>
+                First Name <span>*</span>
+                <input type="text" name="first-name" placeholder="Troy Michael" required>
+            </label>
+            <label>
+                Last Name <span>*</span>
+                <input type="text" name="last-name" placeholder="Camarillo" required>
+            </label>
+            <label>
+                Email Address <span>*</span>
+                <input type="email" name="email" placeholder="troymichael20040909@gmail.com" required>
+            </label>
+                <input type="checkbox" name="anonymous">
+                Make this an anonymous donation.
+        </div>
+
+        <div class="bank-payment" id="bank-payment">
+            <h3>Credit Card Info</h3>
+            <p><small>🔒 This is a secure SSL encrypted payment.</small></p>
+            <label>
+                Card Number <span>*</span>
+                <input type="text" name="card-number" placeholder="Card Number" required>
+            </label>
+            <label>
+                CVC <span>*</span>
+                <input type="text" name="cvc" placeholder="CVC" required>
+            </label>
+            <label>
+                Cardholder Name <span>*</span>
+                <input type="text" name="cardholder-name" placeholder="Cardholder Name" required>
+            </label>
+            <label>
+                Expiration <span>*</span>
+                <input type="text" name="expiration" placeholder="MM / YY" required>
+            </label>
+        </div>
+
+        <div class="gcash-payment" id="gcash-payment" style="display: none;">
+            <h3>GCash QR Code</h3>
+            <img src="assets/gcash.jpg" alt="GCash QR Code" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+        </div>
+
+        <div class="donation-total">
+            <p>Donation Total: <strong id="donation-total">₱ 3,500.00</strong></p>
+        </div>
+
+        <button type="submit" class="donate-btn">Donate Now</button>
+    </form>
+</body>
 </html>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const selectedAmountDisplay = document.getElementById("selected-amount");
+    const donationTotalDisplay = document.getElementById("donation-total");
+    const presetButtons = document.querySelectorAll(".preset-amounts button");
+    const customAmountInput = document.getElementById("custom-amount");
+    const bankPaymentSection = document.getElementById("bank-payment");
+    const gcashPaymentSection = document.getElementById("gcash-payment");
+    const paymentMethods = document.querySelectorAll('input[name="payment"]');
+    const anonymousCheckbox = document.querySelector('input[name="anonymous"]');
+    const personalInfoSection = document.querySelector('.personal-info');
+    const nameFieldContainers = personalInfoSection.querySelectorAll("label");
+    const toggleDonationFormButton = document.getElementById("toggle-donation-form");
+    const donationForm = document.getElementById("donation-form");
+
+    // Toggle donation form visibility
+    toggleDonationFormButton.addEventListener("click", () => {
+        if (donationForm.style.display === "none") {
+            donationForm.style.display = "block";
+            toggleDonationFormButton.style.display = "none";
+        } else {
+            donationForm.style.display = "none";
+            toggleDonationFormButton.style.display = "block";
+        }
+    });
+
+    // Update display and button styles for preset buttons
+    presetButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            presetButtons.forEach(btn => btn.classList.remove("active"));
+            button.classList.add("active");
+            selectedAmountDisplay.textContent = button.dataset.amount;
+            donationTotalDisplay.textContent = button.dataset.amount;
+            customAmountInput.value = "";
+        });
+    });
+
+    // Update display for custom input
+    customAmountInput.addEventListener("input", () => {
+        presetButtons.forEach(btn => btn.classList.remove("active"));
+        const value = customAmountInput.value ? `₱ ${customAmountInput.value}` : "₱ 0.00";
+        selectedAmountDisplay.textContent = value;
+        donationTotalDisplay.textContent = value;
+    });
+
+    // Toggle payment sections based on selected payment method
+    paymentMethods.forEach(method => {
+        method.addEventListener("change", () => {
+            if (method.value === "bank-transfer") {
+                bankPaymentSection.style.display = "block";
+                gcashPaymentSection.style.display = "none";
+            } else if (method.value === "gcash") {
+                bankPaymentSection.style.display = "none";
+                gcashPaymentSection.style.display = "block";
+            }
+        });
+    });
+
+    // Handle anonymous donation toggle
+    anonymousCheckbox.addEventListener("change", () => {
+        if (anonymousCheckbox.checked) {
+            nameFieldContainers.forEach(container => {
+                container.style.display = "none"; // Hide the label and input field
+                const input = container.querySelector("input");
+                if (input) input.required = false; // Remove required attribute
+            });
+        } else {
+            nameFieldContainers.forEach(container => {
+                container.style.display = "block"; // Show the label and input field
+                const input = container.querySelector("input");
+                if (input) input.required = true; // Restore required attribute
+            });
+        }
+    });
+});
+
+</script>
+<script>
+    let currentSlide = 0;
+    const slideContainer = document.querySelector('.slide-container');
+    const totalSlides = document.querySelectorAll('.slide').length;
+    
+    function updateSlide() {
+        slideContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+    
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateSlide();
+    }
+    
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateSlide();
+    }
+    </script>

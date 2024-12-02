@@ -3,19 +3,21 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <link rel="stylesheet" href="css/index.css">
+        <title>About Us</title>
+        <link rel="stylesheet" href="css/about.css">
+        <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
     </head>
 
     <header>
         <div class="header">
             <div class="navigation">
                 <ul>
+                    <li><img src="assets/logo.png" style="height: 100px; width: 100px; z-index: 10; margin-left: 190px; margin-top: 20px;"></li>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about_us.html" style="text-decoration: underline;"><b>About Us</b></a></li>
                     <li><a href="problem.html">The Problem</a></li>
                     <li><a href="progress.html">Progress Made</a></li>
-                    <li><a href="volunteer.html">Support</a></li>
+                    <li><a href="volunteer.html">Support/Donate</a></li>
                     <li><a href="blog.html">Blog/Updates</a></li>
                 </ul>
             </div>
@@ -23,11 +25,113 @@
     </header>
     
     <body>
-        <div class="heroimage">
+        <div class="title2">
+            <h1>Meet the Team</h1>
         </div>
-    </body>
+    
+        <div class="container">
+            <div class="box" onclick="revealImage(this)">
+                <figcaption>Name: Aliza Casimsiman<br>
+                    Email: amcasimsiman@up.edu.ph</figcaption>
+                <img src="assets/aliza.png" alt="Aliza" class="content-image">
+                <img src="assets/aliza2.png" alt="Aliza" class="cover-image">
+            </div>
+        
+            <div class="box" onclick="revealImage(this)">
+                <figcaption>Name: Tricia Maire Seguiza<br>
+                    Email: ttseguiza@up.edu.ph
+                    </figcaption>
+                <img src="assets/maire.png" alt="Marie" class="content-image">
+                <img src="assets/maire2.png" alt="Marie" class="cover-image">
+            </div>
+        
+            <div class="box" onclick="revealImage(this)">
+                <figcaption>Name: Antonio Magpantay<br>
+                    Email: anmagpantay@up.edu.ph</figcaption>
+                <img src="assets/antonio.png" alt="Antonio" class="content-image">
+                <img src="assets/antonio2.png" alt="Antonio" class="cover-image">
+            </div>
+        
+            <div class="box" onclick="revealImage(this)">
+                <figcaption>Name: Ulap Bioco<br>
+                    Email: uabioco@up.edu.ph
+                    </figcaption>
+                <img src="assets/ulap.jpg" alt="Ulap" class="content-image">
+                <img src="assets/ulap2.png" alt="Ulap" class="cover-image">
+            </div>
 
-    <footer>
-        <h1>Footer</h1>
-    </footer>
+            <div class="box" onclick="revealImage(this)">
+                <figcaption>Name: Maria Paula Guiao<br>
+                    Email: mgguiao@up.edu.ph
+                    </figcaption>
+                <img src="assets/paula.jpg" alt="Paula" class="content-image">
+                <img src="assets/paula2.png" alt="Paula" class="cover-image">
+            </div>
+        </div>
+        <div class="divider"></div>
+        <div class="title2">
+            <h1>About Us</h1>
+        </div>
+        <div class="infos">
+
+            <div class="slider">
+                <h2>Who are We?</h2>
+                <p> We are a group of students dedicated to protecting the Pasig River, a vital 
+                waterway with great environmental, cultural, and historical significance 
+                for our communities. Through this website, we aim to inspire meaningful 
+                actions that will restore the river to its full potential.</p>
+            </div>
+            <div class="slider">
+                <h2>Our Mission</h2>
+                <p>To educate and inform the public about the environmental, cultural, 
+                    and historical importance of the Pasig River while inspiring 
+                    communities to take action in preserving and restoring it.
+                </p>
+            </div>
+            <div class="slider">
+                <h2>Our Vision</h2>
+                <p>
+                A revitalized Pasig River that is:<br>
+                1. Pollution-Free: A river free from waste and harmful pollutants.<br>
+                2. Flourishing with Life: A thriving ecosystem with rich biodiversity restored to its former glory<br>
+                3. A Source of Pride: A symbol of sustainability, embraced and cherished by all communities it touches.
+            </p>
+            </div>
+            <div class="slider">
+                <h2>What We Do</h2>
+                <p>Historically, the Pasig River was home to a diverse array of aquatic 
+                    life, including fish, mollusks, and aquatic plants. However, decades 
+                    of pollution, industrialization, and urban development have caused 
+                    significant biodiversity loss. Today, we work to deliver knowledge 
+                    about the remaining ecosystems and advocate for measures to restore 
+                    native species and habitats.</p>
+            </div>
+        </div>
+    </div>
+    <div class="divider"></div>
+    <div class="title3">
+        <h1>We support and spotlight key rehabilitation projects, such as:</h1><br>
+        <h2>Pasig River Rehabilitation Project (PRRP)<br>
+        Pasig River Rehabilitation Program (PRRC Initiatives)<br>
+        Kapit-Bisig Para sa Ilog Pasig<br>
+        Piso Para sa Pasig<br>
+        Pasig River Urban Development (PRUD) Project</h2>
+    </div>
+    <div class="divider"></div>
+
+
+    </body>
+    <script>
+        function revealImage(box) {
+            const coverImage = box.querySelector('.cover-image');
+            if (!coverImage.classList.contains('fall')) {
+                coverImage.classList.add('fall');
+                
+                // Remove the element after animation completes
+                setTimeout(() => {
+                    coverImage.style.display = 'none';
+                }, 1000);
+            }
+        }
+        </script>
 </html>

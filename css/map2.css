@@ -287,22 +287,25 @@ footer {
     font-family: Arial, sans-serif;
     gap: 20px;
     width: 100%;
-    margin: 50px 17% 150px;
+    margin: 50px 16% 150px;
     scale: 1.25;
 
 }
 
 .boxes {
-    width: 40%;
+    max-width: 668px;
+    min-width: 668px;
     position: relative;
     background: #f8f8f8;
     border-radius: 10px;
-    height: 300px;
+    min-height: 300px;
+    max-height: 300px;
+
 }
 
 .dot2, .line {
-    width: 1.25rem;
-    height: 1.25rem;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     position: absolute;
     z-index: 2;
@@ -315,7 +318,7 @@ footer {
 }
 
 /* Adjust dot positions */
-#dot1 { outline: 1px solid orange; top: 185px; left: 95px; scale: 1.2}
+#dot1 { outline: 1px solid orange; top: 185px; left: 95px; scale: 1.2; z-index: 20;}
 #dot2 { outline: 2px solid #4facfe; top: 180px; left: 120px; scale: 4; width: 30px;}
 #dot3 { outline: 2px solid #43e97b; top: 220px; left: 120px; scale: 5; width: 40px;}
 #dot4 { outline: 2px solid #fa709a; top: 190px; left: 130px;}
